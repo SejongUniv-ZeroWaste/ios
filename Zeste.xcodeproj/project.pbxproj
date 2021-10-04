@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,18 @@
 		3D4720C1270979AE005E9D8D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D4720BF270979AE005E9D8D /* LaunchScreen.storyboard */; };
 		3D4720CC270979AE005E9D8D /* ZesteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4720CB270979AE005E9D8D /* ZesteTests.swift */; };
 		3D4720D7270979AE005E9D8D /* ZesteUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4720D6270979AE005E9D8D /* ZesteUITests.swift */; };
+		3D4720E72709DE3F005E9D8D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4720E62709DE3F005E9D8D /* MainViewController.swift */; };
+		3D4720EB2709DF1F005E9D8D /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4720EA2709DF1F005E9D8D /* BaseTabBarController.swift */; };
+		3D4720EF2709E086005E9D8D /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4720EE2709E086005E9D8D /* Color.swift */; };
+		3D4720F22709E4F6005E9D8D /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4720F12709E4F6005E9D8D /* CircleView.swift */; };
+		3D4720FA270A0A69005E9D8D /* MyInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4720F9270A0A69005E9D8D /* MyInfoViewController.swift */; };
+		3D4720FC270A0A82005E9D8D /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4720FB270A0A82005E9D8D /* BaseViewController.swift */; };
+		3D4720FE270A1DEC005E9D8D /* StampRoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4720FD270A1DEC005E9D8D /* StampRoundView.swift */; };
+		3D472100270A1FD0005E9D8D /* StampStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4720FF270A1FD0005E9D8D /* StampStackView.swift */; };
+		3D472102270A2549005E9D8D /* InnerStampStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D472101270A2549005E9D8D /* InnerStampStack.swift */; };
+		7812FC5F4480CBE840AFFF79 /* Pods_ZesteTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BDB11F8E640B87F5B30B947 /* Pods_ZesteTests.framework */; };
+		8EBB1C53C41213901AA3BF6E /* Pods_Zeste.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FAC74BB0DAE6D06B00D6DE1 /* Pods_Zeste.framework */; };
+		CF8C1E48B923AAC0AB801E84 /* Pods_Zeste_ZesteUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B628639C9C63AE93505BCD7 /* Pods_Zeste_ZesteUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +47,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1BDB11F8E640B87F5B30B947 /* Pods_ZesteTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZesteTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1FA4880715EF929EF8BA8B2D /* Pods-Zeste-ZesteUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zeste-ZesteUITests.debug.xcconfig"; path = "Target Support Files/Pods-Zeste-ZesteUITests/Pods-Zeste-ZesteUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		1FAC74BB0DAE6D06B00D6DE1 /* Pods_Zeste.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Zeste.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B628639C9C63AE93505BCD7 /* Pods_Zeste_ZesteUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Zeste_ZesteUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C935403E99193085C7F11B9 /* Pods-Zeste-ZesteUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zeste-ZesteUITests.release.xcconfig"; path = "Target Support Files/Pods-Zeste-ZesteUITests/Pods-Zeste-ZesteUITests.release.xcconfig"; sourceTree = "<group>"; };
 		3D4720B1270979AC005E9D8D /* Zeste.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zeste.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D4720B4270979AC005E9D8D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3D4720B6270979AC005E9D8D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +66,19 @@
 		3D4720D2270979AE005E9D8D /* ZesteUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZesteUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D4720D6270979AE005E9D8D /* ZesteUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZesteUITests.swift; sourceTree = "<group>"; };
 		3D4720D8270979AE005E9D8D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3D4720E62709DE3F005E9D8D /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		3D4720EA2709DF1F005E9D8D /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
+		3D4720EE2709E086005E9D8D /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		3D4720F12709E4F6005E9D8D /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
+		3D4720F9270A0A69005E9D8D /* MyInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInfoViewController.swift; sourceTree = "<group>"; };
+		3D4720FB270A0A82005E9D8D /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		3D4720FD270A1DEC005E9D8D /* StampRoundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StampRoundView.swift; sourceTree = "<group>"; };
+		3D4720FF270A1FD0005E9D8D /* StampStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StampStackView.swift; sourceTree = "<group>"; };
+		3D472101270A2549005E9D8D /* InnerStampStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InnerStampStack.swift; sourceTree = "<group>"; };
+		44E377BADB7508ECC6272069 /* Pods-Zeste.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zeste.release.xcconfig"; path = "Target Support Files/Pods-Zeste/Pods-Zeste.release.xcconfig"; sourceTree = "<group>"; };
+		7AAF36A4C4322807790BCB07 /* Pods-Zeste.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zeste.debug.xcconfig"; path = "Target Support Files/Pods-Zeste/Pods-Zeste.debug.xcconfig"; sourceTree = "<group>"; };
+		B8824A30605384C3AFF56C15 /* Pods-ZesteTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZesteTests.debug.xcconfig"; path = "Target Support Files/Pods-ZesteTests/Pods-ZesteTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F61B22613CBE4C6318302489 /* Pods-ZesteTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZesteTests.release.xcconfig"; path = "Target Support Files/Pods-ZesteTests/Pods-ZesteTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EBB1C53C41213901AA3BF6E /* Pods_Zeste.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7812FC5F4480CBE840AFFF79 /* Pods_ZesteTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,6 +102,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF8C1E48B923AAC0AB801E84 /* Pods_Zeste_ZesteUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +116,8 @@
 				3D4720CA270979AE005E9D8D /* ZesteTests */,
 				3D4720D5270979AE005E9D8D /* ZesteUITests */,
 				3D4720B2270979AC005E9D8D /* Products */,
+				4A44AB4F2C923A0629B906F2 /* Pods */,
+				51BFB4EBF1EE35B89C7B7984 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,6 +134,9 @@
 		3D4720B3270979AC005E9D8D /* Zeste */ = {
 			isa = PBXGroup;
 			children = (
+				3D4720E82709DEDD005E9D8D /* Configuration */,
+				3D4720E42709DE26005E9D8D /* View */,
+				3D4720F32709EE54005E9D8D /* Model */,
 				3D4720B4270979AC005E9D8D /* AppDelegate.swift */,
 				3D4720B6270979AC005E9D8D /* SceneDelegate.swift */,
 				3D4720B8270979AC005E9D8D /* ViewController.swift */,
@@ -128,6 +166,91 @@
 			path = ZesteUITests;
 			sourceTree = "<group>";
 		};
+		3D4720E42709DE26005E9D8D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3D4720F02709E4E5005E9D8D /* CustomView */,
+				3D4720E52709DE2E005E9D8D /* Main */,
+				3D4720F9270A0A69005E9D8D /* MyInfoViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3D4720E52709DE2E005E9D8D /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				3D4720E62709DE3F005E9D8D /* MainViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		3D4720E82709DEDD005E9D8D /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				3D4720E92709DEE1005E9D8D /* Base */,
+				3D4720EC2709E059005E9D8D /* Extension */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		3D4720E92709DEE1005E9D8D /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				3D4720EA2709DF1F005E9D8D /* BaseTabBarController.swift */,
+				3D4720FB270A0A82005E9D8D /* BaseViewController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		3D4720EC2709E059005E9D8D /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				3D4720EE2709E086005E9D8D /* Color.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		3D4720F02709E4E5005E9D8D /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				3D4720F12709E4F6005E9D8D /* CircleView.swift */,
+				3D4720FD270A1DEC005E9D8D /* StampRoundView.swift */,
+				3D4720FF270A1FD0005E9D8D /* StampStackView.swift */,
+				3D472101270A2549005E9D8D /* InnerStampStack.swift */,
+			);
+			path = CustomView;
+			sourceTree = "<group>";
+		};
+		3D4720F32709EE54005E9D8D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4A44AB4F2C923A0629B906F2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7AAF36A4C4322807790BCB07 /* Pods-Zeste.debug.xcconfig */,
+				44E377BADB7508ECC6272069 /* Pods-Zeste.release.xcconfig */,
+				1FA4880715EF929EF8BA8B2D /* Pods-Zeste-ZesteUITests.debug.xcconfig */,
+				2C935403E99193085C7F11B9 /* Pods-Zeste-ZesteUITests.release.xcconfig */,
+				B8824A30605384C3AFF56C15 /* Pods-ZesteTests.debug.xcconfig */,
+				F61B22613CBE4C6318302489 /* Pods-ZesteTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		51BFB4EBF1EE35B89C7B7984 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1FAC74BB0DAE6D06B00D6DE1 /* Pods_Zeste.framework */,
+				2B628639C9C63AE93505BCD7 /* Pods_Zeste_ZesteUITests.framework */,
+				1BDB11F8E640B87F5B30B947 /* Pods_ZesteTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +258,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3D4720DB270979AE005E9D8D /* Build configuration list for PBXNativeTarget "Zeste" */;
 			buildPhases = (
+				EFD0664CBC96A5525867284C /* [CP] Check Pods Manifest.lock */,
 				3D4720AD270979AC005E9D8D /* Sources */,
 				3D4720AE270979AC005E9D8D /* Frameworks */,
 				3D4720AF270979AC005E9D8D /* Resources */,
+				7B3DEDA584F38D6B1D39C75B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -152,6 +277,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3D4720DE270979AE005E9D8D /* Build configuration list for PBXNativeTarget "ZesteTests" */;
 			buildPhases = (
+				2656B0E1F6BD92ED4DD97639 /* [CP] Check Pods Manifest.lock */,
 				3D4720C3270979AE005E9D8D /* Sources */,
 				3D4720C4270979AE005E9D8D /* Frameworks */,
 				3D4720C5270979AE005E9D8D /* Resources */,
@@ -170,9 +296,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3D4720E1270979AE005E9D8D /* Build configuration list for PBXNativeTarget "ZesteUITests" */;
 			buildPhases = (
+				02690F85983329B2A0DD25BB /* [CP] Check Pods Manifest.lock */,
 				3D4720CE270979AE005E9D8D /* Sources */,
 				3D4720CF270979AE005E9D8D /* Frameworks */,
 				3D4720D0270979AE005E9D8D /* Resources */,
+				E651873CCD5033D3FA6BA230 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -253,6 +381,109 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		02690F85983329B2A0DD25BB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Zeste-ZesteUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2656B0E1F6BD92ED4DD97639 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ZesteTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7B3DEDA584F38D6B1D39C75B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Zeste/Pods-Zeste-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Zeste/Pods-Zeste-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Zeste/Pods-Zeste-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E651873CCD5033D3FA6BA230 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Zeste-ZesteUITests/Pods-Zeste-ZesteUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Zeste-ZesteUITests/Pods-Zeste-ZesteUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Zeste-ZesteUITests/Pods-Zeste-ZesteUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EFD0664CBC96A5525867284C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Zeste-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3D4720AD270979AC005E9D8D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -260,7 +491,16 @@
 			files = (
 				3D4720B9270979AC005E9D8D /* ViewController.swift in Sources */,
 				3D4720B5270979AC005E9D8D /* AppDelegate.swift in Sources */,
+				3D4720EB2709DF1F005E9D8D /* BaseTabBarController.swift in Sources */,
+				3D472102270A2549005E9D8D /* InnerStampStack.swift in Sources */,
+				3D472100270A1FD0005E9D8D /* StampStackView.swift in Sources */,
 				3D4720B7270979AC005E9D8D /* SceneDelegate.swift in Sources */,
+				3D4720E72709DE3F005E9D8D /* MainViewController.swift in Sources */,
+				3D4720FE270A1DEC005E9D8D /* StampRoundView.swift in Sources */,
+				3D4720FC270A0A82005E9D8D /* BaseViewController.swift in Sources */,
+				3D4720F22709E4F6005E9D8D /* CircleView.swift in Sources */,
+				3D4720FA270A0A69005E9D8D /* MyInfoViewController.swift in Sources */,
+				3D4720EF2709E086005E9D8D /* Color.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,16 +673,19 @@
 		};
 		3D4720DC270979AE005E9D8D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7AAF36A4C4322807790BCB07 /* Pods-Zeste.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = GLQQLN3R4U;
 				INFOPLIST_FILE = Zeste/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.miori.dev-ios.Zeste";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -452,16 +695,19 @@
 		};
 		3D4720DD270979AE005E9D8D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 44E377BADB7508ECC6272069 /* Pods-Zeste.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = GLQQLN3R4U;
 				INFOPLIST_FILE = Zeste/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.miori.dev-ios.Zeste";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -471,6 +717,7 @@
 		};
 		3D4720DF270979AE005E9D8D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B8824A30605384C3AFF56C15 /* Pods-ZesteTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -493,6 +740,7 @@
 		};
 		3D4720E0270979AE005E9D8D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F61B22613CBE4C6318302489 /* Pods-ZesteTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -515,6 +763,7 @@
 		};
 		3D4720E2270979AE005E9D8D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1FA4880715EF929EF8BA8B2D /* Pods-Zeste-ZesteUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -535,6 +784,7 @@
 		};
 		3D4720E3270979AE005E9D8D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2C935403E99193085C7F11B9 /* Pods-Zeste-ZesteUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
