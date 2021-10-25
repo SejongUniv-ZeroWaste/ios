@@ -9,22 +9,22 @@ import UIKit
 
 class BaseTabBarController: UITabBarController, UITabBarControllerDelegate {
     let mainViewController  = MainViewController()
-    //let networkViewController = NetworkMainViewController()
+    let howToWashVC = HowToWashViewController()
     
     let actionTabBarItem  = UITabBarItem(title: "home", image: UIImage(systemName: "house.fill"), tag: 0)
-   // let networkTabBarItem = UITabBarItem(title: "tabB", image: UIImage(systemName: "network"), tag: 1)
+    let howtoTabBarItem = UITabBarItem(title: "tabB", image: UIImage(systemName: "questionmark.circle.fill"), tag: 1)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let actionNavigationController = UINavigationController(rootViewController: mainViewController)
-       // let networkNavigationController = UINavigationController(rootViewController: networkViewController)
+        let howtoNavigationController = UINavigationController(rootViewController: howToWashVC)
         
         actionNavigationController.tabBarItem  = actionTabBarItem
-       // networkNavigationController.tabBarItem = networkTabBarItem
+        howtoNavigationController.tabBarItem = howtoTabBarItem
         
         //self.viewControllers = [actionNavigationController, networkNavigationController]
-        self.viewControllers = [actionNavigationController]
+        self.viewControllers = [actionNavigationController, howtoNavigationController]
         self.delegate = self
         setColor()
     }
