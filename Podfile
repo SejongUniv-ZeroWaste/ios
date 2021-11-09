@@ -1,5 +1,5 @@
 # Uncomment the next line to define a global platform for your project
-# platform :ios, '13.0'
+# platform :ios, '14.0'
 
 target 'Zeste' do
   # Comment the next line if you don't want to use dynamic frameworks
@@ -10,6 +10,8 @@ target 'Zeste' do
   pod 'AlamofireNetworkActivityIndicator'
   pod 'SnapKit'
   pod 'Then'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Firestore'
 
   target 'ZesteTests' do
     inherit! :search_paths
