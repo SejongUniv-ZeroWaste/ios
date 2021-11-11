@@ -44,6 +44,22 @@ extension BaseViewController {
         // 네비바 아래 실선 1Px 짜리 없애기
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
+        
+        //Fix Nav Bar tint issue in iOS 15.0 or later - is transparent w/o code below
+        if #available(iOS 15, *) {
+            let appearance = UINavigationBarAppearance()
+            let navigationBar = UINavigationBar()
+            appearance.configureWithOpaqueBackground()
+            appearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black ]
+            appearance.backgroundColor = .zestGreen
+            //appearance.shadowColor = nil
+            //UINavigationBar.appearance().standardAppearance = appearance;
+            //UINavigationBar.appearance().scrollEdgeAppearance = appearance
+            self.navigationController?.navigationBar.compactAppearance = appearance
+            self.navigationController?.navigationBar.standardAppearance = appearance
+            self.navigationController?.navigationBar.scrollEdgeAppearance = appearance
+        }
+
     }
     
 }
