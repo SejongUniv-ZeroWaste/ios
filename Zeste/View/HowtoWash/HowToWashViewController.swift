@@ -13,7 +13,7 @@ class HowToWashViewController: BaseViewController {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         layout.minimumLineSpacing = 0
-        $0.backgroundColor = .yellow
+        $0.backgroundColor = .none
         $0.contentInset = UIEdgeInsets.init(top: 0, left: 0, bottom: 0, right: 0)
         $0.showsHorizontalScrollIndicator = false
         $0.collectionViewLayout = layout
@@ -29,7 +29,7 @@ class HowToWashViewController: BaseViewController {
         $0.pageIndicatorTintColor = .darkGray
         $0.backgroundColor = .none
     }
-    
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +45,7 @@ class HowToWashViewController: BaseViewController {
 }
 
 extension HowToWashViewController {
+
     private func initVC() {
         _ = [mycv, myPageControl].map {self.view.addSubview($0)}
     }
@@ -75,6 +76,9 @@ extension HowToWashViewController : UICollectionViewDelegate, UICollectionViewDa
         }
         
         detailCell.myLabel.text = "텀블러 세척법 \(indexPath.row + 1)"
+        detailCell.imgView.image = UIImage(named: "tree\(indexPath.row + 1)")
+        
+        detailCell.desLabel.text = WashSeq().desText[indexPath.row]
         cell = detailCell
         return cell
     }

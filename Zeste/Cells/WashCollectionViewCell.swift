@@ -17,7 +17,13 @@ class WashCollectionViewCell: UICollectionViewCell {
     }
     
     let myLabel = UILabel().then {
+        $0.font = UIFont.systemFont(ofSize: 16, weight: .bold)
+        $0.textColor = .black
+    }
+    
+    let desLabel = UILabel().then {
         $0.font = UIFont.systemFont(ofSize: 14, weight: .regular)
+        $0.numberOfLines = 0
         $0.textColor = .black
     }
     
@@ -29,14 +35,14 @@ class WashCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = .none
-        _ = [imgView,myLabel].map {self.addSubview($0)}
+        _ = [imgView,myLabel,desLabel].map {self.addSubview($0)}
         bindConstraints()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         self.backgroundColor = .none
-        _ = [imgView,myLabel].map {self.addSubview($0)}
+        _ = [imgView,myLabel,desLabel].map {self.addSubview($0)}
         bindConstraints()
     }
     
@@ -52,6 +58,11 @@ class WashCollectionViewCell: UICollectionViewCell {
             $0.top.leading.equalToSuperview().offset(10)
         }
         
+        desLabel.snp.makeConstraints {
+            $0.centerX.equalToSuperview()
+            $0.top.equalTo(imgView.snp.bottom).offset(10)
+            $0.width.equalToSuperview()
+        }
     }
 
 }
