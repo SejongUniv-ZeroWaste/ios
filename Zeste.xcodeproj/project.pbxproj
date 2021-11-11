@@ -26,6 +26,13 @@
 		3D472102270A2549005E9D8D /* InnerStampStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D472101270A2549005E9D8D /* InnerStampStack.swift */; };
 		3DB5670727267DCD0039EAA0 /* HowToWashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB5670627267DCD0039EAA0 /* HowToWashViewController.swift */; };
 		3DB5670A27267E8D0039EAA0 /* WashCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB5670927267E8D0039EAA0 /* WashCollectionViewCell.swift */; };
+		3DD7D1132739AF73006BA7FF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3DD7D1122739AF73006BA7FF /* GoogleService-Info.plist */; };
+		3DD7D1142739AF73006BA7FF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3DD7D1122739AF73006BA7FF /* GoogleService-Info.plist */; };
+		3DD7D1152739AF73006BA7FF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3DD7D1122739AF73006BA7FF /* GoogleService-Info.plist */; };
+		3DE55EA4273AB9D000747E27 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE55EA3273AB9D000747E27 /* LoginViewController.swift */; };
+		3DE55EA6273D104D00747E27 /* WashModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE55EA5273D104D00747E27 /* WashModel.swift */; };
+		3DE55EA8273D162B00747E27 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE55EA7273D162B00747E27 /* NewsViewController.swift */; };
+		3DE55EAA273D170800747E27 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE55EA9273D170800747E27 /* NewsTableViewCell.swift */; };
 		7812FC5F4480CBE840AFFF79 /* Pods_ZesteTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BDB11F8E640B87F5B30B947 /* Pods_ZesteTests.framework */; };
 		8EBB1C53C41213901AA3BF6E /* Pods_Zeste.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FAC74BB0DAE6D06B00D6DE1 /* Pods_Zeste.framework */; };
 		CF8C1E48B923AAC0AB801E84 /* Pods_Zeste_ZesteUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B628639C9C63AE93505BCD7 /* Pods_Zeste_ZesteUITests.framework */; };
@@ -79,6 +86,12 @@
 		3D472101270A2549005E9D8D /* InnerStampStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InnerStampStack.swift; sourceTree = "<group>"; };
 		3DB5670627267DCD0039EAA0 /* HowToWashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToWashViewController.swift; sourceTree = "<group>"; };
 		3DB5670927267E8D0039EAA0 /* WashCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WashCollectionViewCell.swift; sourceTree = "<group>"; };
+		3DD7D1122739AF73006BA7FF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		3DE55EA1273AB35000747E27 /* Zeste.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Zeste.entitlements; sourceTree = "<group>"; };
+		3DE55EA3273AB9D000747E27 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		3DE55EA5273D104D00747E27 /* WashModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WashModel.swift; sourceTree = "<group>"; };
+		3DE55EA7273D162B00747E27 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
+		3DE55EA9273D170800747E27 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
 		44E377BADB7508ECC6272069 /* Pods-Zeste.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zeste.release.xcconfig"; path = "Target Support Files/Pods-Zeste/Pods-Zeste.release.xcconfig"; sourceTree = "<group>"; };
 		7AAF36A4C4322807790BCB07 /* Pods-Zeste.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zeste.debug.xcconfig"; path = "Target Support Files/Pods-Zeste/Pods-Zeste.debug.xcconfig"; sourceTree = "<group>"; };
 		B8824A30605384C3AFF56C15 /* Pods-ZesteTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZesteTests.debug.xcconfig"; path = "Target Support Files/Pods-ZesteTests/Pods-ZesteTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -138,6 +151,7 @@
 		3D4720B3270979AC005E9D8D /* Zeste */ = {
 			isa = PBXGroup;
 			children = (
+				3DE55EA1273AB35000747E27 /* Zeste.entitlements */,
 				3D4720E82709DEDD005E9D8D /* Configuration */,
 				3D4720E42709DE26005E9D8D /* View */,
 				3D4720F32709EE54005E9D8D /* Model */,
@@ -149,6 +163,7 @@
 				3D4720BD270979AE005E9D8D /* Assets.xcassets */,
 				3D4720BF270979AE005E9D8D /* LaunchScreen.storyboard */,
 				3D4720C2270979AE005E9D8D /* Info.plist */,
+				3DD7D1122739AF73006BA7FF /* GoogleService-Info.plist */,
 			);
 			path = Zeste;
 			sourceTree = "<group>";
@@ -174,10 +189,12 @@
 		3D4720E42709DE26005E9D8D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3DE55EA2273AB9BA00747E27 /* Login */,
 				3D4720F02709E4E5005E9D8D /* CustomView */,
 				3DB5670527267DA50039EAA0 /* HowtoWash */,
 				3D4720E52709DE2E005E9D8D /* Main */,
 				3D4720F9270A0A69005E9D8D /* MyInfoViewController.swift */,
+				3DE55EA7273D162B00747E27 /* NewsViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -230,6 +247,7 @@
 		3D4720F32709EE54005E9D8D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				3DE55EA5273D104D00747E27 /* WashModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -246,8 +264,17 @@
 			isa = PBXGroup;
 			children = (
 				3DB5670927267E8D0039EAA0 /* WashCollectionViewCell.swift */,
+				3DE55EA9273D170800747E27 /* NewsTableViewCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		3DE55EA2273AB9BA00747E27 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				3DE55EA3273AB9D000747E27 /* LoginViewController.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 		4A44AB4F2C923A0629B906F2 /* Pods */ = {
@@ -382,6 +409,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D4720C1270979AE005E9D8D /* LaunchScreen.storyboard in Resources */,
+				3DD7D1132739AF73006BA7FF /* GoogleService-Info.plist in Resources */,
 				3D4720BE270979AE005E9D8D /* Assets.xcassets in Resources */,
 				3D4720BC270979AC005E9D8D /* Main.storyboard in Resources */,
 			);
@@ -391,6 +419,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DD7D1142739AF73006BA7FF /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -398,6 +427,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DD7D1152739AF73006BA7FF /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -514,16 +544,20 @@
 				3D4720B9270979AC005E9D8D /* ViewController.swift in Sources */,
 				3D4720B5270979AC005E9D8D /* AppDelegate.swift in Sources */,
 				3DB5670727267DCD0039EAA0 /* HowToWashViewController.swift in Sources */,
+				3DE55EA4273AB9D000747E27 /* LoginViewController.swift in Sources */,
 				3D4720EB2709DF1F005E9D8D /* BaseTabBarController.swift in Sources */,
 				3D472102270A2549005E9D8D /* InnerStampStack.swift in Sources */,
 				3D472100270A1FD0005E9D8D /* StampStackView.swift in Sources */,
 				3D4720B7270979AC005E9D8D /* SceneDelegate.swift in Sources */,
+				3DE55EAA273D170800747E27 /* NewsTableViewCell.swift in Sources */,
 				3D4720E72709DE3F005E9D8D /* MainViewController.swift in Sources */,
 				3D4720FE270A1DEC005E9D8D /* StampRoundView.swift in Sources */,
 				3D4720FC270A0A82005E9D8D /* BaseViewController.swift in Sources */,
 				3D4720F22709E4F6005E9D8D /* CircleView.swift in Sources */,
+				3DE55EA8273D162B00747E27 /* NewsViewController.swift in Sources */,
 				3DB5670A27267E8D0039EAA0 /* WashCollectionViewCell.swift in Sources */,
 				3D4720FA270A0A69005E9D8D /* MyInfoViewController.swift in Sources */,
+				3DE55EA6273D104D00747E27 /* WashModel.swift in Sources */,
 				3D4720EF2709E086005E9D8D /* Color.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -701,6 +735,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Zeste/Zeste.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = GLQQLN3R4U;
@@ -723,6 +758,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Zeste/Zeste.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = GLQQLN3R4U;
