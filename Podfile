@@ -12,6 +12,7 @@ target 'Zeste' do
   pod 'Then'
   pod 'Firebase/Auth'
   pod 'Firebase/Firestore'
+  pod 'Firebase/Database'
 
   target 'ZesteTests' do
     inherit! :search_paths
