@@ -6,10 +6,15 @@
 //
 
 import UIKit
+import FirebaseAuth
+import FirebaseDatabase
 
 class MyInfoViewController: BaseViewController {
 
     let myCircleView = CircleView()
+    
+    // real db
+    var ref : DatabaseReference!
     
     let clearBtn = UIButton().then {
         //시스템 이미지 크고 두껍게 바꾸기
@@ -17,6 +22,11 @@ class MyInfoViewController: BaseViewController {
         let largeBoldDoc = UIImage(systemName: "clear", withConfiguration: largeConfig)
         $0.setImage(largeBoldDoc, for: .normal)
         $0.tintColor = .black
+    }
+    
+    let welcomeLabel = UILabel().then {
+        $0.font = UIFont.boldSystemFont(ofSize: 14)
+        $0.numberOfLines = 0
     }
     
     var radius : CGFloat = CGFloat()
@@ -37,6 +47,9 @@ class MyInfoViewController: BaseViewController {
         initVC()
         bindConstraints()
         
+        // firebase reference 초기화
+        ref = Database.database().reference()
+        
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.4) {
            //3번째 실행
             self.afterBindConstraints()
@@ -44,6 +57,16 @@ class MyInfoViewController: BaseViewController {
         
         clearBtn.addTarget(self, action: #selector(clearTapped), for: .touchUpInside)
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let email = Auth.auth().currentUser?.email ?? "로그인이 안됨"
+        welcomeLabel.text = "\(email) 님 환영합니다"
+        let userID = Auth.auth().currentUser?.uid ?? ""
+        
+        //ref.child("users").child(userID).setValue(["nickname","miori"])
     }
 
 }
@@ -53,7 +76,7 @@ extension MyInfoViewController {
     private func initVC() {
         //self.view.addSubview(myCircleView)
         _ = [myCircleView].map {self.view.addSubview($0)}
-        _ = [clearBtn].map {self.myCircleView.addSubview($0)}
+        _ = [clearBtn,welcomeLabel].map {self.myCircleView.addSubview($0)}
     }
     
     private func bindConstraints() {
@@ -61,6 +84,9 @@ extension MyInfoViewController {
             $0.centerX.equalToSuperview()
             $0.bottom.equalTo(self.view.snp.top).offset(deviceSize.height/4)
             $0.width.equalTo(self.view.snp.width).multipliedBy(1.57)
+        }
+        welcomeLabel.snp.makeConstraints {
+            $0.centerX.centerY.equalToSuperview()
         }
 
     }
@@ -86,5 +112,7 @@ extension MyInfoViewController {
 extension MyInfoViewController {
     @objc func clearTapped() {
         self.dismiss(animated: false, completion: nil)
+        //self.changeRootViewController(LoginViewController())
+
     }
 }
