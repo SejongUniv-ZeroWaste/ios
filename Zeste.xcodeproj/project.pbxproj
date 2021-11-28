@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D1356FF274A943C0040D16B /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1356FE274A943C0040D16B /* UIViewController.swift */; };
 		3D4720B5270979AC005E9D8D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4720B4270979AC005E9D8D /* AppDelegate.swift */; };
 		3D4720B7270979AC005E9D8D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4720B6270979AC005E9D8D /* SceneDelegate.swift */; };
 		3D4720B9270979AC005E9D8D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4720B8270979AC005E9D8D /* ViewController.swift */; };
@@ -24,6 +25,8 @@
 		3D4720FE270A1DEC005E9D8D /* StampRoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4720FD270A1DEC005E9D8D /* StampRoundView.swift */; };
 		3D472100270A1FD0005E9D8D /* StampStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4720FF270A1FD0005E9D8D /* StampStackView.swift */; };
 		3D472102270A2549005E9D8D /* InnerStampStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D472101270A2549005E9D8D /* InnerStampStack.swift */; };
+		3D62D8082750160E001CB6CF /* QRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D62D8072750160E001CB6CF /* QRCodeViewController.swift */; };
+		3D62D80B27501FC6001CB6CF /* ReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D62D80A27501FC6001CB6CF /* ReaderView.swift */; };
 		3DB5670727267DCD0039EAA0 /* HowToWashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB5670627267DCD0039EAA0 /* HowToWashViewController.swift */; };
 		3DB5670A27267E8D0039EAA0 /* WashCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB5670927267E8D0039EAA0 /* WashCollectionViewCell.swift */; };
 		3DD7D1132739AF73006BA7FF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3DD7D1122739AF73006BA7FF /* GoogleService-Info.plist */; };
@@ -61,6 +64,7 @@
 		1FAC74BB0DAE6D06B00D6DE1 /* Pods_Zeste.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Zeste.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B628639C9C63AE93505BCD7 /* Pods_Zeste_ZesteUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Zeste_ZesteUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C935403E99193085C7F11B9 /* Pods-Zeste-ZesteUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zeste-ZesteUITests.release.xcconfig"; path = "Target Support Files/Pods-Zeste-ZesteUITests/Pods-Zeste-ZesteUITests.release.xcconfig"; sourceTree = "<group>"; };
+		3D1356FE274A943C0040D16B /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		3D4720B1270979AC005E9D8D /* Zeste.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zeste.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D4720B4270979AC005E9D8D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3D4720B6270979AC005E9D8D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -84,6 +88,8 @@
 		3D4720FD270A1DEC005E9D8D /* StampRoundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StampRoundView.swift; sourceTree = "<group>"; };
 		3D4720FF270A1FD0005E9D8D /* StampStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StampStackView.swift; sourceTree = "<group>"; };
 		3D472101270A2549005E9D8D /* InnerStampStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InnerStampStack.swift; sourceTree = "<group>"; };
+		3D62D8072750160E001CB6CF /* QRCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeViewController.swift; sourceTree = "<group>"; };
+		3D62D80A27501FC6001CB6CF /* ReaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderView.swift; sourceTree = "<group>"; };
 		3DB5670627267DCD0039EAA0 /* HowToWashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToWashViewController.swift; sourceTree = "<group>"; };
 		3DB5670927267E8D0039EAA0 /* WashCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WashCollectionViewCell.swift; sourceTree = "<group>"; };
 		3DD7D1122739AF73006BA7FF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -195,6 +201,7 @@
 				3D4720E52709DE2E005E9D8D /* Main */,
 				3D4720F9270A0A69005E9D8D /* MyInfoViewController.swift */,
 				3DE55EA7273D162B00747E27 /* NewsViewController.swift */,
+				3D62D8072750160E001CB6CF /* QRCodeViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -229,6 +236,7 @@
 			isa = PBXGroup;
 			children = (
 				3D4720EE2709E086005E9D8D /* Color.swift */,
+				3D1356FE274A943C0040D16B /* UIViewController.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -236,6 +244,7 @@
 		3D4720F02709E4E5005E9D8D /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
+				3D62D80927501FB6001CB6CF /* QRCode */,
 				3D4720F12709E4F6005E9D8D /* CircleView.swift */,
 				3D4720FD270A1DEC005E9D8D /* StampRoundView.swift */,
 				3D4720FF270A1FD0005E9D8D /* StampStackView.swift */,
@@ -250,6 +259,14 @@
 				3DE55EA5273D104D00747E27 /* WashModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		3D62D80927501FB6001CB6CF /* QRCode */ = {
+			isa = PBXGroup;
+			children = (
+				3D62D80A27501FC6001CB6CF /* ReaderView.swift */,
+			);
+			path = QRCode;
 			sourceTree = "<group>";
 		};
 		3DB5670527267DA50039EAA0 /* HowtoWash */ = {
@@ -544,16 +561,19 @@
 				3D4720B9270979AC005E9D8D /* ViewController.swift in Sources */,
 				3D4720B5270979AC005E9D8D /* AppDelegate.swift in Sources */,
 				3DB5670727267DCD0039EAA0 /* HowToWashViewController.swift in Sources */,
+				3D1356FF274A943C0040D16B /* UIViewController.swift in Sources */,
 				3DE55EA4273AB9D000747E27 /* LoginViewController.swift in Sources */,
 				3D4720EB2709DF1F005E9D8D /* BaseTabBarController.swift in Sources */,
 				3D472102270A2549005E9D8D /* InnerStampStack.swift in Sources */,
 				3D472100270A1FD0005E9D8D /* StampStackView.swift in Sources */,
 				3D4720B7270979AC005E9D8D /* SceneDelegate.swift in Sources */,
 				3DE55EAA273D170800747E27 /* NewsTableViewCell.swift in Sources */,
+				3D62D80B27501FC6001CB6CF /* ReaderView.swift in Sources */,
 				3D4720E72709DE3F005E9D8D /* MainViewController.swift in Sources */,
 				3D4720FE270A1DEC005E9D8D /* StampRoundView.swift in Sources */,
 				3D4720FC270A0A82005E9D8D /* BaseViewController.swift in Sources */,
 				3D4720F22709E4F6005E9D8D /* CircleView.swift in Sources */,
+				3D62D8082750160E001CB6CF /* QRCodeViewController.swift in Sources */,
 				3DE55EA8273D162B00747E27 /* NewsViewController.swift in Sources */,
 				3DB5670A27267E8D0039EAA0 /* WashCollectionViewCell.swift in Sources */,
 				3D4720FA270A0A69005E9D8D /* MyInfoViewController.swift in Sources */,
