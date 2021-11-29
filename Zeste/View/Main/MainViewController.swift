@@ -8,6 +8,7 @@
 import UIKit
 import SnapKit
 import Then
+import FirebaseDatabase
 
 class MainViewController: BaseViewController {
     
@@ -23,6 +24,7 @@ class MainViewController: BaseViewController {
     
     var myStampCnt : Int = 7
 
+    var ref : DatabaseReference!
     
     override func viewDidLayoutSubviews() {
         mainCircleView.layer.cornerRadius = mainCircleView.frame.height / 2
@@ -35,7 +37,25 @@ class MainViewController: BaseViewController {
         initVC()
         bindConstraints()
         setBarButton()
-        getMyStamp()
+        
+        // firebase reference 초기화
+        ref = Database.database().reference()
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        ref.child("users").observeSingleEvent(of: .value, with: { (snapshot) in
+            for child in snapshot.children {
+                let snap = child as! DataSnapshot
+                print(snap)
+                let value = snap.value as? NSDictionary
+                self.myStampCnt = value?["points"] as? Int ?? 2
+                //self.presentAlert(title: "\(self.myStampCnt)")
+                self.getMyStamp()
+            }
+        }) { (error) in
+            print(error.localizedDescription)
+        }
         
     }
     
@@ -98,9 +118,11 @@ extension MainViewController {
 extension MainViewController {
     @objc func qrTapped() {
         print("qrTapped")
+        self.navigationController?.pushViewController(QRCodeViewController(), animated: false)
     }
     @objc func personTapped(){
         print("infoTapped")
+        self.dismiss(animated: false, completion: nil)
         //moveDown()
         let nextVC = MyInfoViewController()
         nextVC.modalPresentationStyle = .fullScreen
@@ -113,7 +135,7 @@ extension MainViewController {
 extension MainViewController {
     func getMyStamp() {
         // 한줄 다 채워야하는 경우
-        if myStampCnt > 5 {
+        if myStampCnt > 5 && myStampCnt < 11 {
             for i in 1...5 {
                 innerStampView1.circleArr[i].image =  UIImage(named: "stampOn")
             }
@@ -122,7 +144,7 @@ extension MainViewController {
                 innerStampView2.circleArr[i].image =  UIImage(named: "stampOn")
             }
         } else {
-            for i in 1...myStampCnt {
+            for i in 0...myStampCnt {
                 innerStampView1.circleArr[i].image =  UIImage(named: "stampOn")
             }
         }
