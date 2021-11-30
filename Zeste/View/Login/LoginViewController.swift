@@ -14,19 +14,36 @@ class LoginViewController: BaseViewController {
     let emailTF = UITextField().then {
         $0.placeholder = "이메일을 입력해주세요"
         $0.borderStyle = .roundedRect
+        $0.keyboardType = .emailAddress
+        $0.autocorrectionType = .no
+        $0.textContentType = .emailAddress
+        $0.autocapitalizationType = .none
     }
     
     let pwTF = UITextField().then {
         $0.placeholder = "비밀번호를 입력해주세요"
         $0.borderStyle = .roundedRect
+        $0.keyboardType = .asciiCapable
+        $0.autocorrectionType = .no
+        $0.textContentType = .password
+        $0.isSecureTextEntry = true
     }
     
     let loginBtn = UIButton().then {
         $0.setTitle("로그인", for: .normal)
-        $0.setTitleColor(.black, for: .normal)
-        $0.titleLabel?.font = UIFont.systemFont(ofSize: 13)
+        $0.setTitleColor(.white, for: .normal)
+        $0.backgroundColor = .zestGreen
+        $0.layer.cornerRadius = 8
+        $0.titleLabel?.font = UIFont.systemFont(ofSize: 15)
     }
     
+    let joinBtn = UIButton().then {
+        $0.setTitle("회원가입", for: .normal)
+        $0.setTitleColor(.white, for: .normal)
+        $0.backgroundColor = .zestGreen
+        $0.layer.cornerRadius = 8
+        $0.titleLabel?.font = UIFont.systemFont(ofSize: 15)
+    }
     // real db
     var ref : DatabaseReference!
     
@@ -39,6 +56,7 @@ class LoginViewController: BaseViewController {
         bindConstraints()
         
         loginBtn.addTarget(self, action: #selector(loginTapped(_:)), for: .touchUpInside)
+        joinBtn.addTarget(self, action: #selector(joinTapped(_:)), for: .touchUpInside)
         self.dismissKeyboardWhenTappedAround()
         
         // firebase reference 초기화
@@ -50,29 +68,34 @@ class LoginViewController: BaseViewController {
 
 extension LoginViewController {
     fileprivate func initV(){
-        _ = [emailTF,pwTF,loginBtn].map {self.view.addSubview($0)}
+        _ = [emailTF,pwTF,loginBtn,joinBtn].map {self.view.addSubview($0)}
     }
     fileprivate func bindConstraints(){
         emailTF.snp.makeConstraints {
             $0.centerX.equalToSuperview()
-            $0.leftMargin.equalTo(30)
+            $0.leftMargin.equalTo(16)
             $0.centerY.equalToSuperview().offset(-25)
         }
         pwTF.snp.makeConstraints {
             $0.centerX.equalToSuperview()
-            $0.leftMargin.equalTo(30)
+            $0.leftMargin.equalTo(16)
             $0.centerY.equalToSuperview().offset(25)
         }
         loginBtn.snp.makeConstraints {
             $0.leading.trailing.equalTo(pwTF)
+            $0.bottom.equalTo(joinBtn.snp.top).offset(-16)
+            $0.height.equalTo(joinBtn)
+        }
+        joinBtn.snp.makeConstraints {
+            $0.leading.trailing.equalTo(pwTF)
             $0.bottom.equalToSuperview().offset(-30)
+            $0.height.equalTo(loginBtn.snp.width).multipliedBy(0.105)
         }
     }
 }
 
 extension LoginViewController {
-    @objc func loginTapped(_ sender : UIButton) {
-        
+    @objc func joinTapped(_ sender : UIButton) {
         let in_email = emailTF.text ?? ""
         let in_pw = pwTF.text ?? ""
         
@@ -87,7 +110,8 @@ extension LoginViewController {
                 switch code {
                 case 17007:
                 // 이미 계정이 있는 경우, 로그인 필요
-                    self.loginUser(withEmail: in_email, password: in_pw)
+                    self.presentAlert(title: "⚠️ 이미 등록된 계정이 있어요")
+                    // 기기에 uid 저장
                 default:
                     self.presentAlert(title: error.localizedDescription )
                     
@@ -95,11 +119,19 @@ extension LoginViewController {
             } else {
                 // error 없는 경우
                 self.changeRootViewController(BaseTabBarController())
-                let userID = Auth.auth().currentUser?.uid ?? ""
-                self.ref.child("users").child(userID).setValue(["points":0])
+                let userID : String = Auth.auth().currentUser?.uid ?? ""
+                let in_data : UserInfo = UserInfo(nick: "admin", phone: "010-0000-0000", points: 0)
+                //self.ref.child("users").child(userID).setValue(["points":0])
+                self.ref.child("users").child(userID).setValue(in_data.toDict)
             }
 
         }
+    }
+    @objc func loginTapped(_ sender : UIButton) {
+        let in_email = emailTF.text ?? ""
+        let in_pw = pwTF.text ?? ""
+        
+        self.loginUser(withEmail: in_email, password: in_pw)
     }
     
     private func loginUser(withEmail email : String, password : String) {
@@ -110,7 +142,7 @@ extension LoginViewController {
             } else {
                 self.changeRootViewController(BaseTabBarController())
                 let userID = Auth.auth().currentUser?.uid ?? ""
-                self.ref.child("users").child(userID).setValue(["points":0])
+                //self.ref.child("users").child(userID).setValue(["points":0])
             }
         }
     }
