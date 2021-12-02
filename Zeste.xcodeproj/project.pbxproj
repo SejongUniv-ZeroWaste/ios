@@ -39,6 +39,7 @@
 		3DE55EA8273D162B00747E27 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE55EA7273D162B00747E27 /* NewsViewController.swift */; };
 		3DE55EAA273D170800747E27 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE55EA9273D170800747E27 /* NewsTableViewCell.swift */; };
 		3DED0BE42757B3430063D57C /* LabelText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DED0BE32757B3430063D57C /* LabelText.swift */; };
+		3DED0BE72759343B0063D57C /* MyCouponViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DED0BE62759343B0063D57C /* MyCouponViewController.swift */; };
 		7812FC5F4480CBE840AFFF79 /* Pods_ZesteTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BDB11F8E640B87F5B30B947 /* Pods_ZesteTests.framework */; };
 		8EBB1C53C41213901AA3BF6E /* Pods_Zeste.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FAC74BB0DAE6D06B00D6DE1 /* Pods_Zeste.framework */; };
 		CF8C1E48B923AAC0AB801E84 /* Pods_Zeste_ZesteUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B628639C9C63AE93505BCD7 /* Pods_Zeste_ZesteUITests.framework */; };
@@ -104,6 +105,7 @@
 		3DE55EA7273D162B00747E27 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		3DE55EA9273D170800747E27 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
 		3DED0BE32757B3430063D57C /* LabelText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelText.swift; sourceTree = "<group>"; };
+		3DED0BE62759343B0063D57C /* MyCouponViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCouponViewController.swift; sourceTree = "<group>"; };
 		44E377BADB7508ECC6272069 /* Pods-Zeste.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zeste.release.xcconfig"; path = "Target Support Files/Pods-Zeste/Pods-Zeste.release.xcconfig"; sourceTree = "<group>"; };
 		7AAF36A4C4322807790BCB07 /* Pods-Zeste.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zeste.debug.xcconfig"; path = "Target Support Files/Pods-Zeste/Pods-Zeste.debug.xcconfig"; sourceTree = "<group>"; };
 		B8824A30605384C3AFF56C15 /* Pods-ZesteTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZesteTests.debug.xcconfig"; path = "Target Support Files/Pods-ZesteTests/Pods-ZesteTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -201,6 +203,7 @@
 		3D4720E42709DE26005E9D8D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3DED0BE52759342B0063D57C /* MyCoupon */,
 				3D62D80C27555DE0001CB6CF /* Join */,
 				3DE55EA2273AB9BA00747E27 /* Login */,
 				3D4720F02709E4E5005E9D8D /* CustomView */,
@@ -325,6 +328,14 @@
 				3DED0BE32757B3430063D57C /* LabelText.swift */,
 			);
 			path = Text;
+			sourceTree = "<group>";
+		};
+		3DED0BE52759342B0063D57C /* MyCoupon */ = {
+			isa = PBXGroup;
+			children = (
+				3DED0BE62759343B0063D57C /* MyCouponViewController.swift */,
+			);
+			path = MyCoupon;
 			sourceTree = "<group>";
 		};
 		4A44AB4F2C923A0629B906F2 /* Pods */ = {
@@ -596,6 +607,7 @@
 				3DB5670727267DCD0039EAA0 /* HowToWashViewController.swift in Sources */,
 				3D1356FF274A943C0040D16B /* UIViewController.swift in Sources */,
 				3DE55EA4273AB9D000747E27 /* LoginViewController.swift in Sources */,
+				3DED0BE72759343B0063D57C /* MyCouponViewController.swift in Sources */,
 				3D4720EB2709DF1F005E9D8D /* BaseTabBarController.swift in Sources */,
 				3D62D81127558CC4001CB6CF /* UserInfo.swift in Sources */,
 				3DED0BE42757B3430063D57C /* LabelText.swift in Sources */,
