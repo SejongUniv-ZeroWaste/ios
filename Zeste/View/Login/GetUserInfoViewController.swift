@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
 class GetUserInfoViewController: BaseViewController {
 
@@ -55,6 +56,8 @@ class GetUserInfoViewController: BaseViewController {
     var cnt : Int = 0
     var userNick : String = ""
     
+    var ref = Database.database().reference()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -103,7 +106,8 @@ extension GetUserInfoViewController {
 extension GetUserInfoViewController {
     @objc func nextTapped(_ sender : UIButton) {
         if self.cnt == 0 {
-            finishNick()
+            //finishNick()
+            checkNick("admin")
         } else if self.cnt == 1 {
             finishPhone()
         } else if self.cnt == 2 {
@@ -130,5 +134,20 @@ extension GetUserInfoViewController {
         desLabel.text = "\(userNick)님,\n\(LabelText().welcomeT)"
         inTF.isHidden = true
         cnt += 1
+    }
+}
+
+extension GetUserInfoViewController {
+    private func checkNick(_ nick : String) {
+        ref.child("users").queryOrdered(byChild: "nick").queryEqual(toValue: "admin").observeSingleEvent(of: .value) { (snapshot) in
+            print(snapshot)
+            if snapshot.value == nil {
+                //self.presentAlert(title: "없음")
+                self.finishNick()
+            } else {
+                self.presentAlert(title: "⚠️ 닉네임 중복", message: "이미 있는 닉네임 이예요.")
+            }
+        }
+
     }
 }
