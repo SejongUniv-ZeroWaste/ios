@@ -25,6 +25,7 @@ class NewsViewController: BaseViewController {
         setTableView()
         initVC()
         bindConstraints()
+        setBarButton()
     }
 }
 
@@ -37,6 +38,16 @@ extension NewsViewController {
         tv.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }
+    }
+    
+    private func setBarButton() {
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(
+            //.viewfinder
+            image: UIImage(systemName: "brain.head.profile"),
+            style: .plain,
+            target: self,
+            action: #selector(quizTapped)
+        )
     }
     
     private func setTableView() {
@@ -68,4 +79,13 @@ extension NewsViewController : UITableViewDelegate, UITableViewDataSource {
     }
     
     
+}
+
+
+extension NewsViewController {
+    @objc func quizTapped() {
+        let nextVC = QuizViewController()
+        nextVC.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(nextVC, animated: false)
+    }
 }
