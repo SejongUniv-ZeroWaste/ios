@@ -22,7 +22,20 @@ class MainViewController: BaseViewController {
     
     let innerStampView2 = InnerStampStack()
     
-    var myStampCnt : Int = 7
+    let btnView = UIView().then {
+        $0.backgroundColor = .none
+    }
+    let couponBtn = UIButton().then {
+        $0.setImage(UIImage(named: "coupon"), for: .normal)
+        $0.tag = 0
+    }
+    
+    let sizeBtn = UIButton().then {
+        $0.setImage(UIImage(named: "coupon"), for: .normal)
+        $0.tag = 1
+    }
+    
+    var myStampCnt : Int = 0
 
     var ref : DatabaseReference!
     
@@ -41,6 +54,8 @@ class MainViewController: BaseViewController {
         // firebase reference 초기화
         ref = Database.database().reference()
         
+        _ = [couponBtn,sizeBtn].map {$0.addTarget(self, action: #selector(btnTapped), for: .touchUpInside)}
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -48,10 +63,13 @@ class MainViewController: BaseViewController {
             for child in snapshot.children {
                 let snap = child as! DataSnapshot
                 print(snap)
+                //let value = snap.value as? NSDictionary
                 let value = snap.value as? NSDictionary
+                if value?["nick"] as! String == "admin" {
                 self.myStampCnt = value?["points"] as? Int ?? 2
                 //self.presentAlert(title: "\(self.myStampCnt)")
                 self.getMyStamp()
+                }
             }
         }) { (error) in
             print(error.localizedDescription)
@@ -82,7 +100,8 @@ extension MainViewController {
     }
     
     private func initVC() {
-        _ = [mainCircleView,stampWholeView].map {self.view.addSubview($0)}
+        _ = [mainCircleView,stampWholeView,btnView].map {self.view.addSubview($0)}
+        _ = [couponBtn,sizeBtn].map {self.btnView.addSubview($0)}
         _ = [stampStack].map {self.stampWholeView.addSubview($0)}
         _ = [innerStampView1].map {self.stampStack.stampRound1.addSubview($0)}
         _ = [innerStampView2].map {self.stampStack.stampRound2.addSubview($0)}
@@ -110,6 +129,20 @@ extension MainViewController {
         }
         innerStampView2.snp.makeConstraints {
             $0.edges.equalToSuperview()
+        }
+        btnView.snp.makeConstraints {
+            $0.top.equalTo(stampWholeView.snp.bottom).offset(20)
+            $0.centerX.equalToSuperview()
+            $0.leadingMargin.equalTo(10)
+            $0.bottom.equalToSuperview().offset(-20)
+        }
+        couponBtn.snp.makeConstraints {
+            $0.centerY.equalToSuperview()
+            $0.centerX.equalToSuperview().offset(-self.view.frame.width/4)
+        }
+        sizeBtn.snp.makeConstraints  {
+            $0.centerY.equalToSuperview()
+            $0.centerX.equalToSuperview().offset(self.view.frame.width/4)
         }
     }
     
@@ -151,3 +184,15 @@ extension MainViewController {
     }
 }
 
+
+extension MainViewController {
+    @objc func btnTapped(_ sender : UIButton) {
+        if sender.tag == 0 {
+            let nextVC = MyCouponViewController()
+            nextVC.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(nextVC, animated: false)
+        } else if sender.tag == 1 {
+            print("1")
+        }
+    }
+}
