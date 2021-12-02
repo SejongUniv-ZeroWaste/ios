@@ -9,6 +9,8 @@ import UIKit
 
 class QuizViewController: BaseViewController {
     
+    let defaults = UserDefaults.standard
+    
     var ans : Int = Int()
     var ansView : QuizAnsView = QuizAnsView()
     var selectedView : QuizAnsView = QuizAnsView()
@@ -49,7 +51,7 @@ class QuizViewController: BaseViewController {
     }
     
     let quizBtn = UIButton().then {
-        $0.setTitle("이 퀴즈가 좋아요 👍", for: .normal)
+        $0.setTitle("정답을 맞춰보세요", for: .normal)
         $0.setTitleColor(.white, for: .normal)
         //$0.titleLabel?.font = UIFont.Pretendard(.bold, size: 14)
         $0.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
@@ -63,7 +65,8 @@ class QuizViewController: BaseViewController {
         $0.layer.shadowRadius = 4
     }
 
-    
+    var quizlist: [ArrData] = []
+    //var solvedArr : [Bool] = [false]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,7 +78,22 @@ class QuizViewController: BaseViewController {
         
 
         _ = [ans1,ans2,ans3,ans4].map {setupTap(selectedview : $0)}
+        // save U.D arr
+        //defaults.set(solvedArr, forKey: "SolvedArr")
+        
+        QuizListDataManager().getQuizList(viewController: self)
 
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        //solvedArr = defaults.array(forKey: "SolvedArr")  as? [Bool] ?? [Bool]()
+        
+//        if solvedArr[0] {
+//            // true
+//            quizBtn.backgroundColor = .doneBtn
+//            quizBtn.setTitle("이미 푼 퀴즈입니다", for: .normal)
+//        }
     }
 
 }
@@ -163,6 +181,7 @@ extension QuizViewController {
             
         }
         if tag == ans {
+            changeSolvedStatus(idx: 0)
             let correctView = PopupDarkViewController()
             correctView.modalPresentationStyle = .overFullScreen
             let correctPopUP = QuizPopUpView()
@@ -174,6 +193,7 @@ extension QuizViewController {
             correctView.canTouch = false
             self.present(correctView,animated: false,completion: nil)
         } else {
+            changeSolvedStatus(idx: 0)
             let wrongView = PopupDarkViewController()
             wrongView.modalPresentationStyle = .overFullScreen
             let wrongPopup = QuizPopUpView()
@@ -226,5 +246,30 @@ extension QuizViewController {
             selectedView.checkImgView.image = UIImage(named: "wrong")
             _ = [ans1,ans2,ans3,ans4].map {$0.isUserInteractionEnabled = false}
         }
+    }
+}
+
+extension QuizViewController {
+    func didSuccess(result : QuizModel) {
+        //print(result.results)
+        quizlist = result.results
+        setQuizData()
+    }
+    func failedToRequest(message : String) {
+        self.presentAlert(title: message)
+    }
+    
+    func setQuizData() {
+        questionLabel.text = quizlist[0].title
+        ans1.ansLabel.text = quizlist[0].a1
+        ans2.ansLabel.text = quizlist[0].a2
+        ans3.ansLabel.text = quizlist[0].a3
+        ans4.ansLabel.text = quizlist[0].a4
+        ans = quizlist[0].ans - 1
+    }
+    
+    func changeSolvedStatus(idx : Int) {
+//        solvedArr[idx] = true
+//        defaults.set(solvedArr, forKey: "SolvedArr")
     }
 }
