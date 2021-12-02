@@ -23,4 +23,8 @@ extension UIColor {
     // ex. label.textColor = .mainOrange
     class var mainOrange: UIColor { UIColor(hex: 0xF5663F) }
     class var zestGreen : UIColor { UIColor(hex: 0x91C788) }
+    class var quizAnsBG : UIColor { UIColor(hex: 0xF0F1F2)}
+    class var ansPick : UIColor { UIColor(hex: 0x4ADB5A)}
+    class var ansWrong : UIColor { UIColor(hex: 0xF14F31)}
+    class var doneBtn : UIColor { UIColor(hex: 0xDADCE5)}
 }
