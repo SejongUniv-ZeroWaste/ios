@@ -40,6 +40,10 @@
 		3DE55EAA273D170800747E27 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE55EA9273D170800747E27 /* NewsTableViewCell.swift */; };
 		3DED0BE42757B3430063D57C /* LabelText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DED0BE32757B3430063D57C /* LabelText.swift */; };
 		3DED0BE72759343B0063D57C /* MyCouponViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DED0BE62759343B0063D57C /* MyCouponViewController.swift */; };
+		3DED0BEA27593A1D0063D57C /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DED0BE927593A1D0063D57C /* QuizViewController.swift */; };
+		3DED0BEC27593A750063D57C /* QuizAnsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DED0BEB27593A750063D57C /* QuizAnsView.swift */; };
+		3DED0BEE27593B500063D57C /* PopupDarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DED0BED27593B500063D57C /* PopupDarkViewController.swift */; };
+		3DED0BF027593B8C0063D57C /* QuizPopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DED0BEF27593B8C0063D57C /* QuizPopUpView.swift */; };
 		7812FC5F4480CBE840AFFF79 /* Pods_ZesteTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BDB11F8E640B87F5B30B947 /* Pods_ZesteTests.framework */; };
 		8EBB1C53C41213901AA3BF6E /* Pods_Zeste.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FAC74BB0DAE6D06B00D6DE1 /* Pods_Zeste.framework */; };
 		CF8C1E48B923AAC0AB801E84 /* Pods_Zeste_ZesteUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B628639C9C63AE93505BCD7 /* Pods_Zeste_ZesteUITests.framework */; };
@@ -106,6 +110,10 @@
 		3DE55EA9273D170800747E27 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
 		3DED0BE32757B3430063D57C /* LabelText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelText.swift; sourceTree = "<group>"; };
 		3DED0BE62759343B0063D57C /* MyCouponViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCouponViewController.swift; sourceTree = "<group>"; };
+		3DED0BE927593A1D0063D57C /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
+		3DED0BEB27593A750063D57C /* QuizAnsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizAnsView.swift; sourceTree = "<group>"; };
+		3DED0BED27593B500063D57C /* PopupDarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupDarkViewController.swift; sourceTree = "<group>"; };
+		3DED0BEF27593B8C0063D57C /* QuizPopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizPopUpView.swift; sourceTree = "<group>"; };
 		44E377BADB7508ECC6272069 /* Pods-Zeste.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zeste.release.xcconfig"; path = "Target Support Files/Pods-Zeste/Pods-Zeste.release.xcconfig"; sourceTree = "<group>"; };
 		7AAF36A4C4322807790BCB07 /* Pods-Zeste.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zeste.debug.xcconfig"; path = "Target Support Files/Pods-Zeste/Pods-Zeste.debug.xcconfig"; sourceTree = "<group>"; };
 		B8824A30605384C3AFF56C15 /* Pods-ZesteTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZesteTests.debug.xcconfig"; path = "Target Support Files/Pods-ZesteTests/Pods-ZesteTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -203,6 +211,7 @@
 		3D4720E42709DE26005E9D8D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3DED0BE827593A0F0063D57C /* Quiz */,
 				3DED0BE52759342B0063D57C /* MyCoupon */,
 				3D62D80C27555DE0001CB6CF /* Join */,
 				3DE55EA2273AB9BA00747E27 /* Login */,
@@ -259,6 +268,9 @@
 				3D4720FD270A1DEC005E9D8D /* StampRoundView.swift */,
 				3D4720FF270A1FD0005E9D8D /* StampStackView.swift */,
 				3D472101270A2549005E9D8D /* InnerStampStack.swift */,
+				3DED0BEB27593A750063D57C /* QuizAnsView.swift */,
+				3DED0BED27593B500063D57C /* PopupDarkViewController.swift */,
+				3DED0BEF27593B8C0063D57C /* QuizPopUpView.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -336,6 +348,14 @@
 				3DED0BE62759343B0063D57C /* MyCouponViewController.swift */,
 			);
 			path = MyCoupon;
+			sourceTree = "<group>";
+		};
+		3DED0BE827593A0F0063D57C /* Quiz */ = {
+			isa = PBXGroup;
+			children = (
+				3DED0BE927593A1D0063D57C /* QuizViewController.swift */,
+			);
+			path = Quiz;
 			sourceTree = "<group>";
 		};
 		4A44AB4F2C923A0629B906F2 /* Pods */ = {
@@ -615,6 +635,7 @@
 				3D472100270A1FD0005E9D8D /* StampStackView.swift in Sources */,
 				3D4720B7270979AC005E9D8D /* SceneDelegate.swift in Sources */,
 				3DE55EAA273D170800747E27 /* NewsTableViewCell.swift in Sources */,
+				3DED0BEE27593B500063D57C /* PopupDarkViewController.swift in Sources */,
 				3D62D80B27501FC6001CB6CF /* ReaderView.swift in Sources */,
 				3D4720E72709DE3F005E9D8D /* MainViewController.swift in Sources */,
 				3D4720FE270A1DEC005E9D8D /* StampRoundView.swift in Sources */,
@@ -623,7 +644,10 @@
 				3D4720F22709E4F6005E9D8D /* CircleView.swift in Sources */,
 				3D62D8082750160E001CB6CF /* QRCodeViewController.swift in Sources */,
 				3DE55EA8273D162B00747E27 /* NewsViewController.swift in Sources */,
+				3DED0BEC27593A750063D57C /* QuizAnsView.swift in Sources */,
+				3DED0BEA27593A1D0063D57C /* QuizViewController.swift in Sources */,
 				3DB5670A27267E8D0039EAA0 /* WashCollectionViewCell.swift in Sources */,
+				3DED0BF027593B8C0063D57C /* QuizPopUpView.swift in Sources */,
 				3D4720FA270A0A69005E9D8D /* MyInfoViewController.swift in Sources */,
 				3DE55EA6273D104D00747E27 /* WashModel.swift in Sources */,
 				3D4720EF2709E086005E9D8D /* Color.swift in Sources */,
