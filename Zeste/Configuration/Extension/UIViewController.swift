@@ -9,6 +9,12 @@ import UIKit
 import SnapKit
 
 extension UIViewController {
+    
+    var topbarHeight: CGFloat {
+         return (view.window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0.0) +
+             (self.navigationController?.navigationBar.frame.height ?? 0.0)
+     }
+    
     // MARK: 빈 화면을 눌렀을 때 키보드가 내려가도록 처리
     func dismissKeyboardWhenTappedAround() {
         let tap: UITapGestureRecognizer =
@@ -100,5 +106,16 @@ extension UIViewController {
                 alertSuperview.removeFromSuperview()
             }
         )
+    }
+    
+    // MARK: 인디케이터 표시
+    func showIndicator() {
+        IndicatorView.shared.show()
+        IndicatorView.shared.showIndicator()
+    }
+    
+    // MARK: 인디케이터 숨김
+    @objc func dismissIndicator() {
+        IndicatorView.shared.dismiss()
     }
 }
