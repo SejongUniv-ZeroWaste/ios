@@ -80,7 +80,7 @@ class QuizViewController: BaseViewController {
         _ = [ans1,ans2,ans3,ans4].map {setupTap(selectedview : $0)}
         // save U.D arr
         //defaults.set(solvedArr, forKey: "SolvedArr")
-        
+        self.showIndicator()
         QuizListDataManager().getQuizList(viewController: self)
 
     }
@@ -252,6 +252,7 @@ extension QuizViewController {
 extension QuizViewController {
     func didSuccess(result : QuizModel) {
         //print(result.results)
+        self.dismissIndicator()
         quizlist = result.results
         setQuizData()
     }
