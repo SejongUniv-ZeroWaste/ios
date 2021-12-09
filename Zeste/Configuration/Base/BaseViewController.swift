@@ -62,4 +62,13 @@ extension BaseViewController {
 
     }
     
+    func keyboardAnimate(keyboardRectangle: CGRect ,textField: UITextField){
+        print(keyboardRectangle.height)
+        print(self.view.frame.height)
+        print(textField.frame.maxY)
+         if keyboardRectangle.height > (self.view.frame.height - textField.frame.maxY - topbarHeight){
+             self.view.transform = CGAffineTransform(translationX: 0, y: -keyboardRectangle.height + 10)
+         }
+    }
+    
 }
