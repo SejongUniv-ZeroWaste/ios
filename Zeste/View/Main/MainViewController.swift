@@ -31,7 +31,7 @@ class MainViewController: BaseViewController {
     }
     
     let sizeBtn = UIButton().then {
-        $0.setImage(UIImage(named: "coupon"), for: .normal)
+        $0.setImage(UIImage(named: "oz"), for: .normal)
         $0.tag = 1
     }
     
@@ -65,7 +65,7 @@ class MainViewController: BaseViewController {
                 print(snap)
                 //let value = snap.value as? NSDictionary
                 let value = snap.value as? NSDictionary
-                if value?["nick"] as! String == "admin" {
+                if value?["nick"] as! String == "miori" {
                 self.myStampCnt = value?["points"] as? Int ?? 2
                 //self.presentAlert(title: "\(self.myStampCnt)")
                 self.getMyStamp()
@@ -192,7 +192,9 @@ extension MainViewController {
             nextVC.hidesBottomBarWhenPushed = true
             self.navigationController?.pushViewController(nextVC, animated: false)
         } else if sender.tag == 1 {
-            print("1")
+            let nextVC = CoffeeSizeViewController()
+            nextVC.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(nextVC, animated: false)
         }
     }
 }
