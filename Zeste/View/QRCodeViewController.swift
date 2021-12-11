@@ -47,7 +47,7 @@ class QRCodeViewController: UIViewController, AVCaptureMetadataOutputObjectsDele
         view.layer.addSublayer(previewLayer)
         
         qrIV.layer.borderWidth = 2
-        qrIV.layer.borderColor = UIColor.red.cgColor
+        qrIV.layer.borderColor = UIColor.zestGreen.cgColor
         self.view.bringSubviewToFront(qrIV)
         
         session.startRunning()
@@ -79,9 +79,11 @@ extension QRCodeViewController {
                                 let snap = child as! DataSnapshot
                                 print(snap)
                                 let value = snap.value as? NSDictionary
-                                var tmpStamp = value?["points"] as? Int ?? 0
-                                tmpStamp += 1
-                                self.ref.child("users").child(userID).updateChildValues(["points":tmpStamp])
+                                if value?["nick"] as! String == "miori" {
+                                    var tmpStamp = value?["points"] as? Int ?? 0
+                                    tmpStamp += 1
+                                    self.ref.child("users").child(userID).updateChildValues(["points":tmpStamp])
+                                }
                                 //print(self.myStampCnt)
                                 self.navigationController?.popViewController(animated: false)
                             }
