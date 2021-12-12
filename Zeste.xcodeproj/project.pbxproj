@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3D1356FF274A943C0040D16B /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1356FE274A943C0040D16B /* UIViewController.swift */; };
+		3D312D9927659E5100AA295B /* AnotherSizeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D312D9827659E5100AA295B /* AnotherSizeCollectionViewCell.swift */; };
+		3D312D9C2765A67E00AA295B /* MyMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D312D9B2765A67E00AA295B /* MyMapViewController.swift */; };
 		3D4720B5270979AC005E9D8D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4720B4270979AC005E9D8D /* AppDelegate.swift */; };
 		3D4720B7270979AC005E9D8D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4720B6270979AC005E9D8D /* SceneDelegate.swift */; };
 		3D4720B9270979AC005E9D8D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4720B8270979AC005E9D8D /* ViewController.swift */; };
@@ -46,6 +48,11 @@
 		3DED0BF527595BC90063D57C /* QuizModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DED0BF427595BC90063D57C /* QuizModel.swift */; };
 		3DED0BF727595C8F0063D57C /* QuisListDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DED0BF627595C8F0063D57C /* QuisListDataManager.swift */; };
 		3DED0BF927595CAF0063D57C /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DED0BF827595CAF0063D57C /* Constant.swift */; };
+		3DED0BFB2759B1130063D57C /* SizeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DED0BFA2759B1130063D57C /* SizeCollectionViewCell.swift */; };
+		3DED0BFE2759B41D0063D57C /* CoffeeSizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DED0BFD2759B41D0063D57C /* CoffeeSizeViewController.swift */; };
+		3DED0C012759B9C40063D57C /* CoffeeSizeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DED0C002759B9C40063D57C /* CoffeeSizeModel.swift */; };
+		3DED0C042759BA2A0063D57C /* CoffeeSizeDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DED0C032759BA2A0063D57C /* CoffeeSizeDataManager.swift */; };
+		3DED0C072759BFCB0063D57C /* IndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DED0C062759BFCB0063D57C /* IndicatorView.swift */; };
 		7812FC5F4480CBE840AFFF79 /* Pods_ZesteTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BDB11F8E640B87F5B30B947 /* Pods_ZesteTests.framework */; };
 		8EBB1C53C41213901AA3BF6E /* Pods_Zeste.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FAC74BB0DAE6D06B00D6DE1 /* Pods_Zeste.framework */; };
 		CF8C1E48B923AAC0AB801E84 /* Pods_Zeste_ZesteUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B628639C9C63AE93505BCD7 /* Pods_Zeste_ZesteUITests.framework */; };
@@ -75,6 +82,8 @@
 		2B628639C9C63AE93505BCD7 /* Pods_Zeste_ZesteUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Zeste_ZesteUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C935403E99193085C7F11B9 /* Pods-Zeste-ZesteUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zeste-ZesteUITests.release.xcconfig"; path = "Target Support Files/Pods-Zeste-ZesteUITests/Pods-Zeste-ZesteUITests.release.xcconfig"; sourceTree = "<group>"; };
 		3D1356FE274A943C0040D16B /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		3D312D9827659E5100AA295B /* AnotherSizeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnotherSizeCollectionViewCell.swift; sourceTree = "<group>"; };
+		3D312D9B2765A67E00AA295B /* MyMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMapViewController.swift; sourceTree = "<group>"; };
 		3D4720B1270979AC005E9D8D /* Zeste.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zeste.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D4720B4270979AC005E9D8D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3D4720B6270979AC005E9D8D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -118,6 +127,11 @@
 		3DED0BF427595BC90063D57C /* QuizModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizModel.swift; sourceTree = "<group>"; };
 		3DED0BF627595C8F0063D57C /* QuisListDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuisListDataManager.swift; sourceTree = "<group>"; };
 		3DED0BF827595CAF0063D57C /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		3DED0BFA2759B1130063D57C /* SizeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeCollectionViewCell.swift; sourceTree = "<group>"; };
+		3DED0BFD2759B41D0063D57C /* CoffeeSizeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeSizeViewController.swift; sourceTree = "<group>"; };
+		3DED0C002759B9C40063D57C /* CoffeeSizeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeSizeModel.swift; sourceTree = "<group>"; };
+		3DED0C032759BA2A0063D57C /* CoffeeSizeDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeSizeDataManager.swift; sourceTree = "<group>"; };
+		3DED0C062759BFCB0063D57C /* IndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorView.swift; sourceTree = "<group>"; };
 		44E377BADB7508ECC6272069 /* Pods-Zeste.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zeste.release.xcconfig"; path = "Target Support Files/Pods-Zeste/Pods-Zeste.release.xcconfig"; sourceTree = "<group>"; };
 		7AAF36A4C4322807790BCB07 /* Pods-Zeste.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zeste.debug.xcconfig"; path = "Target Support Files/Pods-Zeste/Pods-Zeste.debug.xcconfig"; sourceTree = "<group>"; };
 		B8824A30605384C3AFF56C15 /* Pods-ZesteTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZesteTests.debug.xcconfig"; path = "Target Support Files/Pods-ZesteTests/Pods-ZesteTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -152,6 +166,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3D312D9A2765A66600AA295B /* MapView */ = {
+			isa = PBXGroup;
+			children = (
+				3D312D9B2765A67E00AA295B /* MyMapViewController.swift */,
+			);
+			path = MapView;
+			sourceTree = "<group>";
+		};
 		3D4720A8270979AC005E9D8D = {
 			isa = PBXGroup;
 			children = (
@@ -216,6 +238,8 @@
 		3D4720E42709DE26005E9D8D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3D312D9A2765A66600AA295B /* MapView */,
+				3DED0BFC2759B3F60063D57C /* CoffeeSize */,
 				3DED0BE827593A0F0063D57C /* Quiz */,
 				3DED0BE52759342B0063D57C /* MyCoupon */,
 				3D62D80C27555DE0001CB6CF /* Join */,
@@ -241,6 +265,7 @@
 		3D4720E82709DEDD005E9D8D /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
+				3DED0C052759BFBB0063D57C /* CommonClass */,
 				3D4720E92709DEE1005E9D8D /* Base */,
 				3D4720EC2709E059005E9D8D /* Extension */,
 				3DED0BF827595CAF0063D57C /* Constant.swift */,
@@ -283,6 +308,7 @@
 		3D4720F32709EE54005E9D8D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				3DED0BFF2759B9B40063D57C /* CoffeeSize */,
 				3DED0BF327595BBF0063D57C /* Quiz */,
 				3DED0BE22757B3330063D57C /* Text */,
 				3D62D80F27558CB7001CB6CF /* User */,
@@ -294,6 +320,7 @@
 		3D62D80C27555DE0001CB6CF /* Join */ = {
 			isa = PBXGroup;
 			children = (
+				3D62D80D27558B0B001CB6CF /* GetUserInfoViewController.swift */,
 			);
 			path = Join;
 			sourceTree = "<group>";
@@ -319,6 +346,8 @@
 			children = (
 				3DB5670927267E8D0039EAA0 /* WashCollectionViewCell.swift */,
 				3DE55EA9273D170800747E27 /* NewsTableViewCell.swift */,
+				3DED0BFA2759B1130063D57C /* SizeCollectionViewCell.swift */,
+				3D312D9827659E5100AA295B /* AnotherSizeCollectionViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -327,7 +356,6 @@
 			isa = PBXGroup;
 			children = (
 				3DE55EA3273AB9D000747E27 /* LoginViewController.swift */,
-				3D62D80D27558B0B001CB6CF /* GetUserInfoViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -359,6 +387,7 @@
 		3DED0BF127595BB30063D57C /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				3DED0C022759BA1A0063D57C /* CoffeeSize */,
 				3DED0BF227595BB90063D57C /* Quiz */,
 			);
 			path = Network;
@@ -378,6 +407,38 @@
 				3DED0BF427595BC90063D57C /* QuizModel.swift */,
 			);
 			path = Quiz;
+			sourceTree = "<group>";
+		};
+		3DED0BFC2759B3F60063D57C /* CoffeeSize */ = {
+			isa = PBXGroup;
+			children = (
+				3DED0BFD2759B41D0063D57C /* CoffeeSizeViewController.swift */,
+			);
+			path = CoffeeSize;
+			sourceTree = "<group>";
+		};
+		3DED0BFF2759B9B40063D57C /* CoffeeSize */ = {
+			isa = PBXGroup;
+			children = (
+				3DED0C002759B9C40063D57C /* CoffeeSizeModel.swift */,
+			);
+			path = CoffeeSize;
+			sourceTree = "<group>";
+		};
+		3DED0C022759BA1A0063D57C /* CoffeeSize */ = {
+			isa = PBXGroup;
+			children = (
+				3DED0C032759BA2A0063D57C /* CoffeeSizeDataManager.swift */,
+			);
+			path = CoffeeSize;
+			sourceTree = "<group>";
+		};
+		3DED0C052759BFBB0063D57C /* CommonClass */ = {
+			isa = PBXGroup;
+			children = (
+				3DED0C062759BFCB0063D57C /* IndicatorView.swift */,
+			);
+			path = CommonClass;
 			sourceTree = "<group>";
 		};
 		4A44AB4F2C923A0629B906F2 /* Pods */ = {
@@ -647,6 +708,7 @@
 				3D4720B9270979AC005E9D8D /* ViewController.swift in Sources */,
 				3D4720B5270979AC005E9D8D /* AppDelegate.swift in Sources */,
 				3DB5670727267DCD0039EAA0 /* HowToWashViewController.swift in Sources */,
+				3DED0BFE2759B41D0063D57C /* CoffeeSizeViewController.swift in Sources */,
 				3D1356FF274A943C0040D16B /* UIViewController.swift in Sources */,
 				3DED0BF527595BC90063D57C /* QuizModel.swift in Sources */,
 				3DE55EA4273AB9D000747E27 /* LoginViewController.swift in Sources */,
@@ -654,13 +716,16 @@
 				3D4720EB2709DF1F005E9D8D /* BaseTabBarController.swift in Sources */,
 				3D62D81127558CC4001CB6CF /* UserInfo.swift in Sources */,
 				3DED0BE42757B3430063D57C /* LabelText.swift in Sources */,
+				3DED0C072759BFCB0063D57C /* IndicatorView.swift in Sources */,
 				3D472102270A2549005E9D8D /* InnerStampStack.swift in Sources */,
 				3DED0BF727595C8F0063D57C /* QuisListDataManager.swift in Sources */,
 				3D472100270A1FD0005E9D8D /* StampStackView.swift in Sources */,
 				3D4720B7270979AC005E9D8D /* SceneDelegate.swift in Sources */,
 				3DE55EAA273D170800747E27 /* NewsTableViewCell.swift in Sources */,
+				3DED0BFB2759B1130063D57C /* SizeCollectionViewCell.swift in Sources */,
 				3DED0BEE27593B500063D57C /* PopupDarkViewController.swift in Sources */,
 				3D4720E72709DE3F005E9D8D /* MainViewController.swift in Sources */,
+				3D312D9C2765A67E00AA295B /* MyMapViewController.swift in Sources */,
 				3D4720FE270A1DEC005E9D8D /* StampRoundView.swift in Sources */,
 				3DED0BF927595CAF0063D57C /* Constant.swift in Sources */,
 				3D4720FC270A0A82005E9D8D /* BaseViewController.swift in Sources */,
@@ -671,9 +736,12 @@
 				3DED0BEC27593A750063D57C /* QuizAnsView.swift in Sources */,
 				3DED0BEA27593A1D0063D57C /* QuizViewController.swift in Sources */,
 				3DB5670A27267E8D0039EAA0 /* WashCollectionViewCell.swift in Sources */,
+				3DED0C012759B9C40063D57C /* CoffeeSizeModel.swift in Sources */,
 				3DED0BF027593B8C0063D57C /* QuizPopUpView.swift in Sources */,
 				3D4720FA270A0A69005E9D8D /* MyInfoViewController.swift in Sources */,
 				3DE55EA6273D104D00747E27 /* WashModel.swift in Sources */,
+				3D312D9927659E5100AA295B /* AnotherSizeCollectionViewCell.swift in Sources */,
+				3DED0C042759BA2A0063D57C /* CoffeeSizeDataManager.swift in Sources */,
 				3D4720EF2709E086005E9D8D /* Color.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
