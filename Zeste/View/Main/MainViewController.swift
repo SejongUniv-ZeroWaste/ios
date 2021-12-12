@@ -22,6 +22,16 @@ class MainViewController: BaseViewController {
     
     let innerStampView2 = InnerStampStack()
     
+    let logoIV = UIImageView().then {
+        $0.image = UIImage(named: "zeste")
+    }
+    
+    let notiLabel = UILabel().then {
+        $0.font = UIFont.boldSystemFont(ofSize: 20)
+        $0.numberOfLines = 0
+        $0.text = "\"플라스틱 제발 그만 써..\n나 무서워 😱🥶\n이러다 다 죽어 ㅜㅜ\""
+    }
+    
     let btnView = UIView().then {
         $0.backgroundColor = .none
     }
@@ -101,6 +111,7 @@ extension MainViewController {
     
     private func initVC() {
         _ = [mainCircleView,stampWholeView,btnView].map {self.view.addSubview($0)}
+        _ = [logoIV,notiLabel].map {self.mainCircleView.addSubview($0)}
         _ = [couponBtn,sizeBtn].map {self.btnView.addSubview($0)}
         _ = [stampStack].map {self.stampWholeView.addSubview($0)}
         _ = [innerStampView1].map {self.stampStack.stampRound1.addSubview($0)}
@@ -112,6 +123,16 @@ extension MainViewController {
             $0.centerX.equalToSuperview()
             $0.bottom.equalTo(self.view.snp.top).offset(deviceSize.height/4)
             $0.width.equalTo(self.view.snp.width).multipliedBy(1.57)
+        }
+        logoIV.snp.makeConstraints {
+            $0.centerX.equalToSuperview().offset(-self.view.frame.width/3)
+            $0.top.equalTo(self.view.snp.top).offset(15)
+            $0.height.equalToSuperview().multipliedBy(0.25)
+            $0.width.equalTo(logoIV.snp.height).multipliedBy(0.9164)
+        }
+        notiLabel.snp.makeConstraints {
+            $0.centerY.equalTo(logoIV)
+            $0.leading.equalTo(logoIV.snp.trailing).offset(20)
         }
         stampWholeView.snp.makeConstraints {
             $0.top.equalTo(mainCircleView.snp.bottom).offset(28)
