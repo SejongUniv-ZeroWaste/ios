@@ -1,15 +1,15 @@
 //
-//  SizeCollectionViewCell.swift
+//  AnotherSizeCollectionViewCell.swift
 //  Zeste
 //
-//  Created by miori Lee on 2021/12/03.
+//  Created by miori Lee on 2021/12/12.
 //
 
 import UIKit
 
-class SizeCollectionViewCell: UICollectionViewCell {
+class AnotherSizeCollectionViewCell: UICollectionViewCell {
     
-    static let registerID = "\(SizeCollectionViewCell.self)"
+    static let registerID = "\(AnotherSizeCollectionViewCell.self)"
     
     let cafeName = UILabel().then {
         $0.font = UIFont.systemFont(ofSize: 16, weight: .bold)
@@ -41,6 +41,15 @@ class SizeCollectionViewCell: UICollectionViewCell {
         //$0.text = "ICED"
     }
     
+    let midLabel = UIImageView().then {
+        $0.image = UIImage(named: "midSize")
+        $0.contentMode = .scaleAspectFit
+    }
+    
+    let midSize = UILabel().then {
+        $0.font = UIFont.systemFont(ofSize: 12, weight: .regular)
+        $0.textColor = .black
+    }
 //    let hotLabel = UILabel().then {
 //        $0.font = UIFont.systemFont(ofSize: 14, weight: .bold)
 //        $0.textColor = .red
@@ -81,8 +90,8 @@ class SizeCollectionViewCell: UICollectionViewCell {
         self.layer.cornerRadius = 10
         self.layer.borderColor = UIColor.zestGreen.cgColor
         self.backgroundColor = .white
-        _ = [cafeName, stackView,icedSize,hotSize].map {self.addSubview($0)}
-        _ = [icedLabel, hotLabel].map {self.stackView.addArrangedSubview($0)}
+        _ = [cafeName, stackView,icedSize,hotSize,midSize].map {self.addSubview($0)}
+        _ = [icedLabel,midLabel, hotLabel,].map {self.stackView.addArrangedSubview($0)}
     }
     
     private func bindConstraints() {
@@ -105,7 +114,12 @@ class SizeCollectionViewCell: UICollectionViewCell {
             $0.centerX.equalTo(hotLabel)
             $0.top.equalTo(hotLabel.snp.bottom).offset(10)
         }
+        midSize.snp.makeConstraints {
+            $0.centerX.equalTo(midLabel)
+            $0.top.equalTo(midLabel.snp.bottom).offset(10)
+        }
     }
 
 }
+
 
