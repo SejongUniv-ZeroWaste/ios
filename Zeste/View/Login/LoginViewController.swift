@@ -11,6 +11,9 @@ import FirebaseDatabase
 
 class LoginViewController: BaseViewController {
     
+    let logoIV = UIImageView().then {
+        $0.image = UIImage(named: "zeste")
+    }
     let emailTF = UITextField().then {
         $0.placeholder = "이메일을 입력해주세요"
         $0.borderStyle = .roundedRect
@@ -18,7 +21,7 @@ class LoginViewController: BaseViewController {
         $0.autocorrectionType = .no
         $0.textContentType = .emailAddress
         $0.autocapitalizationType = .none
-        $0.font = UIFont.systemFont(ofSize: 15)
+        $0.font = UIFont.systemFont(ofSize: 13)
     }
     
     let pwTF = UITextField().then {
@@ -28,7 +31,7 @@ class LoginViewController: BaseViewController {
         $0.autocorrectionType = .no
         $0.textContentType = .password
         $0.isSecureTextEntry = true
-        $0.font = UIFont.systemFont(ofSize: 15)
+        $0.font = UIFont.systemFont(ofSize: 13)
     }
     
     let loginBtn = UIButton().then {
@@ -36,15 +39,28 @@ class LoginViewController: BaseViewController {
         $0.setTitleColor(.white, for: .normal)
         $0.backgroundColor = .zestGreen
         $0.layer.cornerRadius = 8
-        $0.titleLabel?.font = UIFont.systemFont(ofSize: 15)
+        $0.titleLabel?.font = UIFont.boldSystemFont(ofSize: 15)
     }
     
     let joinBtn = UIButton().then {
         $0.setTitle("회원가입", for: .normal)
-        $0.setTitleColor(.white, for: .normal)
-        $0.backgroundColor = .zestGreen
+        $0.setTitleColor(.black, for: .normal)
+        $0.backgroundColor = .none
         $0.layer.cornerRadius = 8
         $0.titleLabel?.font = UIFont.systemFont(ofSize: 15)
+    }
+    
+    let autoLoginBtn = UIButton().then {
+        $0.setImage(UIImage(systemName: "checkmark.circle"), for: .normal)
+        $0.setTitle("", for: .normal)
+        $0.tintColor = .zestGreen
+    }
+    
+    let autoLoginLabel = UILabel().then {
+        $0.font = .systemFont(ofSize: 14)
+        $0.textColor = .black
+        $0.numberOfLines = 0
+        $0.text = "로그인 상태 유지하기"
     }
     // real db
     var ref : DatabaseReference!
@@ -63,6 +79,8 @@ class LoginViewController: BaseViewController {
         
         // firebase reference 초기화
         ref = Database.database().reference()
+        
+        autoLoginBtn.addTarget(self, action: #selector(maintainLogin(_:)), for: .touchUpInside)
         
         //_ = [emailTF,pwTF].map {$0.delegate = self}
     }
@@ -86,9 +104,15 @@ extension LoginViewController {
         navigationBar?.scrollEdgeAppearance = navigationBarAppearance
     }
     fileprivate func initV(){
-        _ = [emailTF,pwTF,loginBtn,joinBtn].map {self.view.addSubview($0)}
+        _ = [logoIV,emailTF,pwTF,loginBtn,joinBtn,autoLoginBtn, autoLoginLabel].map {self.view.addSubview($0)}
     }
     fileprivate func bindConstraints(){
+        logoIV.snp.makeConstraints {
+            $0.bottom.equalTo(emailTF.snp.top).offset(-16)
+            $0.centerX.equalToSuperview()
+            $0.height.equalToSuperview().multipliedBy(0.3)
+            $0.width.equalTo(logoIV.snp.height).multipliedBy(0.9164)
+        }
         emailTF.snp.makeConstraints {
             $0.centerX.equalToSuperview()
             $0.leftMargin.equalTo(16)
@@ -101,50 +125,59 @@ extension LoginViewController {
         }
         loginBtn.snp.makeConstraints {
             $0.leading.trailing.equalTo(pwTF)
-            $0.bottom.equalTo(joinBtn.snp.top).offset(-16)
+            $0.bottom.equalTo(joinBtn.snp.top).offset(-10)
             $0.height.equalTo(joinBtn)
         }
         joinBtn.snp.makeConstraints {
             $0.leading.trailing.equalTo(pwTF)
             $0.bottom.equalToSuperview().offset(-30)
-            $0.height.equalTo(loginBtn.snp.width).multipliedBy(0.105)
+            $0.height.equalTo(loginBtn.snp.width).multipliedBy(0.12)
+        }
+        autoLoginBtn.snp.makeConstraints {
+            $0.leading.equalTo(emailTF)
+            $0.top.equalTo(pwTF.snp.bottom).offset(12)
+        }
+        autoLoginLabel.snp.makeConstraints {
+            $0.centerY.equalTo(autoLoginBtn)
+            $0.leading.equalTo(autoLoginBtn.snp.trailing).offset(9)
         }
     }
 }
 
 extension LoginViewController {
     @objc func joinTapped(_ sender : UIButton) {
-        let in_email = emailTF.text ?? ""
-        let in_pw = pwTF.text ?? ""
+        self.navigationController?.pushViewController(GetUserInfoViewController(), animated: false)
+        //let in_email = emailTF.text ?? ""
+        //let in_pw = pwTF.text ?? ""
         
         // 신규사용자 생성
         // 새로가입
-        Auth.auth().createUser(withEmail: in_email, password: in_pw) { [weak self] authResult, error in
-            guard let self = self else {return}
-            
-            //error handling
-            if let error = error {
-                let code = (error as NSError).code
-                switch code {
-                case 17007:
-                    // 이미 계정이 있는 경우, 로그인 필요
-                    self.presentAlert(title: "⚠️ 이미 등록된 계정이 있어요")
-                    // 기기에 uid 저장
-                default:
-                    self.presentAlert(title: error.localizedDescription )
-                    
-                }
-            } else {
-                // error 없는 경우
-                //self.changeRootViewController(BaseTabBarController())
-                self.navigationController?.pushViewController(GetUserInfoViewController(), animated: false)
-                let userID : String = Auth.auth().currentUser?.uid ?? ""
-                let in_data : UserInfo = UserInfo(nick: "miori", phone: "010-0000-0000", points: 0)
-                //self.ref.child("users").child(userID).setValue(["points":0])
-                self.ref.child("users").child(userID).setValue(in_data.toDict)
-            }
-            
-        }
+//        Auth.auth().createUser(withEmail: in_email, password: in_pw) { [weak self] authResult, error in
+//            guard let self = self else {return}
+//
+//            //error handling
+//            if let error = error {
+//                let code = (error as NSError).code
+//                switch code {
+//                case 17007:
+//                    // 이미 계정이 있는 경우, 로그인 필요
+//                    self.presentAlert(title: "⚠️ 이미 등록된 계정이 있어요")
+//                    // 기기에 uid 저장
+//                default:
+//                    self.presentAlert(title: error.localizedDescription )
+//
+//                }
+//            } else {
+//                // error 없는 경우
+//                //self.changeRootViewController(BaseTabBarController())
+//                self.navigationController?.pushViewController(GetUserInfoViewController(), animated: false)
+//                let userID : String = Auth.auth().currentUser?.uid ?? ""
+//                let in_data : UserInfo = UserInfo(nick: "miori", phone: "010-0000-0000", points: 0)
+//                //self.ref.child("users").child(userID).setValue(["points":0])
+//                self.ref.child("users").child(userID).setValue(in_data.toDict)
+//            }
+//
+//        }
     }
     @objc func loginTapped(_ sender : UIButton) {
         let in_email = emailTF.text ?? ""
@@ -187,6 +220,10 @@ extension LoginViewController {
         
     }
     
+    @objc func maintainLogin(_ sender : UIButton) {
+        sender.setImage(UIImage(systemName: "checkmark.circle.fill"), for: .normal)
+        sender.tintColor = .zestGreen
+    }
     
     
 }
