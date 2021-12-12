@@ -20,6 +20,10 @@ class MyCouponViewController: BaseViewController {
         $0.isHidden = true
     }
     
+    let couponIV = UIImageView().then {
+        $0.image = UIImage(named: "myCoupon")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -28,7 +32,9 @@ class MyCouponViewController: BaseViewController {
         initV()
         bindConstraints()
         
-        getMyStamp("admin")
+        getMyStamp("miori")
+        couponIV.isHidden = true
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -40,11 +46,17 @@ class MyCouponViewController: BaseViewController {
 
 extension MyCouponViewController {
     private func initV() {
-        _ = [noticLabel].map {self.view.addSubview($0)}
+        _ = [noticLabel,couponIV].map {self.view.addSubview($0)}
     }
     private func bindConstraints(){
         noticLabel.snp.makeConstraints {
             $0.centerX.centerY.equalToSuperview()
+        }
+        couponIV.snp.makeConstraints {
+            $0.centerX.equalToSuperview()
+            $0.top.equalToSuperview().offset(10)
+            $0.leadingMargin.equalTo(10)
+            $0.height.equalTo(couponIV.snp.width).multipliedBy(0.5833)
         }
     }
 }
@@ -70,9 +82,10 @@ extension MyCouponViewController {
     func checkMyStamp(_ stampCnt : Int) {
         if stampCnt != 10 {
             noticLabel.isHidden = false
+            couponIV.isHidden = true
         } else {
-            noticLabel.isHidden = false
-            noticLabel.text = "쿠폰 획득띠"
+            noticLabel.isHidden = true
+            couponIV.isHidden = false
         }
     }
 }
