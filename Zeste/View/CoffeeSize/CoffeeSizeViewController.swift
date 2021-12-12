@@ -15,10 +15,11 @@ class CoffeeSizeViewController: BaseViewController {
         layout.minimumLineSpacing = 10
         $0.backgroundColor = .none
         $0.contentInset = UIEdgeInsets.init(top: 0, left: 0, bottom: 0, right: 0)
-        $0.showsHorizontalScrollIndicator = false
+        $0.showsVerticalScrollIndicator = false
         $0.collectionViewLayout = layout
-        $0.isPagingEnabled = true
+        $0.isPagingEnabled = false
         $0.register(SizeCollectionViewCell.self, forCellWithReuseIdentifier: SizeCollectionViewCell.registerID)
+        $0.register(AnotherSizeCollectionViewCell.self, forCellWithReuseIdentifier: AnotherSizeCollectionViewCell.registerID)
         
     }
     
@@ -32,7 +33,7 @@ class CoffeeSizeViewController: BaseViewController {
         initVC()
         bindConstraints()
         setCV()
-        
+        setRightNaviBtn()
         CoffeeSizeDataManager().getSizeList(viewController: self)
     }
 }
@@ -66,10 +67,22 @@ extension CoffeeSizeViewController : UICollectionViewDelegate, UICollectionViewD
         guard let detailCell = collectionView.dequeueReusableCell(withReuseIdentifier: SizeCollectionViewCell.registerID, for: indexPath) as? SizeCollectionViewCell else {
             return UICollectionViewCell()
         }
-        detailCell.cafeName.text = sizeList[indexPath.row].caffee
-        detailCell.hotSize.text = "\(sizeList[indexPath.row].hot) oz"
-        detailCell.icedSize.text = "\(sizeList[indexPath.row].iced) oz"
-        cell = detailCell
+        guard let anotherCell = collectionView.dequeueReusableCell(withReuseIdentifier: AnotherSizeCollectionViewCell.registerID, for: indexPath) as? AnotherSizeCollectionViewCell else {
+            return UICollectionViewCell()
+        }
+        if indexPath.row != 1 {
+            detailCell.cafeName.text = "🧋 \(sizeList[indexPath.row].caffee)"
+            detailCell.hotSize.text = "\(sizeList[indexPath.row].hot) oz"
+            detailCell.icedSize.text = "\(sizeList[indexPath.row].iced) oz"
+            cell = detailCell
+        } else {
+            anotherCell.cafeName.text = "🧋 \(sizeList[indexPath.row].caffee)"
+            anotherCell.icedSize.text = "12 oz"
+            anotherCell.midSize.text = "\(sizeList[indexPath.row].iced) oz"
+            anotherCell.hotSize.text = "\(sizeList[indexPath.row].hot) oz"
+            cell = anotherCell
+        }
+
         return cell
     }
 }
@@ -78,7 +91,7 @@ extension CoffeeSizeViewController : UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         var size = CGSize()
       
-        let c_width = collectionView.frame.width / 2 - 10
+        let c_width = collectionView.frame.width
         let c_height = c_width * 0.55
         let c_size = CGSize(width: c_width, height: c_height)
             size = c_size
@@ -95,5 +108,18 @@ extension CoffeeSizeViewController {
     }
     func failedToRequest(message : String) {
         self.presentAlert(title: message)
+    }
+}
+
+extension CoffeeSizeViewController {
+    private func setRightNaviBtn () {
+        let questionImg = UIImage(systemName: "questionmark.circle")?.withRenderingMode(.alwaysTemplate)
+        let helpBtn = UIBarButtonItem(image: questionImg, style: .plain, target: self, action: #selector(questionTapped(sender:)))
+        helpBtn.tintColor = .black
+        self.navigationItem.rightBarButtonItem  = helpBtn
+    }
+    
+    @objc func questionTapped(sender: UIBarButtonItem) {
+        self.presentAlert(title: "💁‍♂️ oz -> ml",message: "\n12oz = 355ml\n14oz = 415ml\n16oz = 475ml\n24oz = 710ml")
     }
 }
