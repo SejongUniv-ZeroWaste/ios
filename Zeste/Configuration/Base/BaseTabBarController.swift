@@ -11,7 +11,7 @@ class BaseTabBarController: UITabBarController, UITabBarControllerDelegate {
     let mainViewController  = MainViewController()
     let howToWashVC = HowToWashViewController()
     let newsVC  = NewsViewController()
-    let mainViewController2  = MainViewController()
+    let mainViewController2  = MyMapViewController()
     
     let homtTabBarItem  = UITabBarItem(title: "", image: UIImage(named: "tab1"), tag: 0)
     let locTabBarItem = UITabBarItem(title: "", image: UIImage(named: "tab2"), tag: 1)
@@ -22,7 +22,7 @@ class BaseTabBarController: UITabBarController, UITabBarControllerDelegate {
         super.viewDidLoad()
         
         let homNavigationController = UINavigationController(rootViewController: mainViewController)
-        let locNavigationController = UINavigationController(rootViewController: mainViewController2)
+        let locNavigationController = mainViewController2 //UINavigationController(rootViewController: mainViewController2)
         let newsNavigationController = UINavigationController(rootViewController: newsVC)
         let howtoNavigationController = howToWashVC
         //UINavigationController(rootViewController: howToWashVC)

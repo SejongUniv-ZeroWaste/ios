@@ -18,8 +18,8 @@ class QuizViewController: BaseViewController {
     var solved : Bool = false
     
     let imgView = UIImageView().then {
-        $0.image = UIImage(named: "newsExample")
-        $0.contentMode = .scaleAspectFill
+        $0.image = UIImage(named: "zesteQuiz")
+        $0.contentMode = .scaleAspectFit
     }
     
     let questionLabel = UILabel().then {
@@ -106,7 +106,8 @@ extension QuizViewController {
     }
     private func bindConstraints() {
         imgView.snp.makeConstraints {
-            $0.top.leading.trailing.equalToSuperview()
+            $0.top.equalToSuperview().offset(8)
+            $0.leading.trailing.equalToSuperview()
             $0.height.equalToSuperview().multipliedBy(0.302)
         }
         
