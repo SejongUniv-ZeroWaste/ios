@@ -26,7 +26,6 @@
 		3D472100270A1FD0005E9D8D /* StampStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4720FF270A1FD0005E9D8D /* StampStackView.swift */; };
 		3D472102270A2549005E9D8D /* InnerStampStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D472101270A2549005E9D8D /* InnerStampStack.swift */; };
 		3D62D8082750160E001CB6CF /* QRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D62D8072750160E001CB6CF /* QRCodeViewController.swift */; };
-		3D62D80B27501FC6001CB6CF /* ReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D62D80A27501FC6001CB6CF /* ReaderView.swift */; };
 		3D62D80E27558B0B001CB6CF /* GetUserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D62D80D27558B0B001CB6CF /* GetUserInfoViewController.swift */; };
 		3D62D81127558CC4001CB6CF /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D62D81027558CC4001CB6CF /* UserInfo.swift */; };
 		3DB5670727267DCD0039EAA0 /* HowToWashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB5670627267DCD0039EAA0 /* HowToWashViewController.swift */; };
@@ -100,7 +99,6 @@
 		3D4720FF270A1FD0005E9D8D /* StampStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StampStackView.swift; sourceTree = "<group>"; };
 		3D472101270A2549005E9D8D /* InnerStampStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InnerStampStack.swift; sourceTree = "<group>"; };
 		3D62D8072750160E001CB6CF /* QRCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeViewController.swift; sourceTree = "<group>"; };
-		3D62D80A27501FC6001CB6CF /* ReaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderView.swift; sourceTree = "<group>"; };
 		3D62D80D27558B0B001CB6CF /* GetUserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserInfoViewController.swift; sourceTree = "<group>"; };
 		3D62D81027558CC4001CB6CF /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		3DB5670627267DCD0039EAA0 /* HowToWashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToWashViewController.swift; sourceTree = "<group>"; };
@@ -271,7 +269,6 @@
 		3D4720F02709E4E5005E9D8D /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
-				3D62D80927501FB6001CB6CF /* QRCode */,
 				3D4720F12709E4F6005E9D8D /* CircleView.swift */,
 				3D4720FD270A1DEC005E9D8D /* StampRoundView.swift */,
 				3D4720FF270A1FD0005E9D8D /* StampStackView.swift */,
@@ -292,14 +289,6 @@
 				3DE55EA5273D104D00747E27 /* WashModel.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		3D62D80927501FB6001CB6CF /* QRCode */ = {
-			isa = PBXGroup;
-			children = (
-				3D62D80A27501FC6001CB6CF /* ReaderView.swift */,
-			);
-			path = QRCode;
 			sourceTree = "<group>";
 		};
 		3D62D80C27555DE0001CB6CF /* Join */ = {
@@ -671,7 +660,6 @@
 				3D4720B7270979AC005E9D8D /* SceneDelegate.swift in Sources */,
 				3DE55EAA273D170800747E27 /* NewsTableViewCell.swift in Sources */,
 				3DED0BEE27593B500063D57C /* PopupDarkViewController.swift in Sources */,
-				3D62D80B27501FC6001CB6CF /* ReaderView.swift in Sources */,
 				3D4720E72709DE3F005E9D8D /* MainViewController.swift in Sources */,
 				3D4720FE270A1DEC005E9D8D /* StampRoundView.swift in Sources */,
 				3DED0BF927595CAF0063D57C /* Constant.swift in Sources */,
