@@ -24,10 +24,15 @@ class SizeCollectionViewCell: UICollectionViewCell {
         $0.distribution = .equalSpacing
     }
     
-    let icedLabel = UILabel().then {
-        $0.font = UIFont.systemFont(ofSize: 14, weight: .bold)
-        $0.textColor = .blue
-        $0.text = "ICED"
+//    let icedLabel = UILabel().then {
+//        $0.font = UIFont.systemFont(ofSize: 14, weight: .bold)
+//        $0.textColor = .blue
+//        $0.text = "ICED"
+//    }
+    
+    let icedLabel = UIImageView().then {
+        $0.image = UIImage(named: "smallSize")
+        $0.contentMode = .scaleAspectFit
     }
     
     let icedSize = UILabel().then {
@@ -36,10 +41,14 @@ class SizeCollectionViewCell: UICollectionViewCell {
         //$0.text = "ICED"
     }
     
-    let hotLabel = UILabel().then {
-        $0.font = UIFont.systemFont(ofSize: 14, weight: .bold)
-        $0.textColor = .red
-        $0.text = "HOT"
+//    let hotLabel = UILabel().then {
+//        $0.font = UIFont.systemFont(ofSize: 14, weight: .bold)
+//        $0.textColor = .red
+//        $0.text = "HOT"
+//    }
+    
+    let hotLabel = UIImageView().then {
+        $0.image = UIImage(named: "bigSize")
     }
     
     let hotSize = UILabel().then {
@@ -71,7 +80,7 @@ class SizeCollectionViewCell: UICollectionViewCell {
         self.layer.borderWidth = 1.0
         self.layer.cornerRadius = 10
         self.layer.borderColor = UIColor.zestGreen.cgColor
-        self.backgroundColor = .zestGreen
+        self.backgroundColor = .white
         _ = [cafeName, stackView,icedSize,hotSize].map {self.addSubview($0)}
         _ = [icedLabel, hotLabel].map {self.stackView.addArrangedSubview($0)}
     }
@@ -79,13 +88,14 @@ class SizeCollectionViewCell: UICollectionViewCell {
     private func bindConstraints() {
         cafeName.snp.makeConstraints {
             $0.centerX.equalToSuperview()
-            $0.top.equalToSuperview().offset(10)
+            $0.top.equalToSuperview().offset(13)
         }
         
         stackView.snp.makeConstraints {
             $0.top.equalTo(cafeName.snp.bottom).offset(10)
             $0.centerX.equalToSuperview()
-            $0.leadingMargin.equalTo(16)
+            //$0.leadingMargin.equalTo(16)
+            $0.width.equalToSuperview().multipliedBy(0.6)
         }
         icedSize.snp.makeConstraints {
             $0.centerX.equalTo(icedLabel)
