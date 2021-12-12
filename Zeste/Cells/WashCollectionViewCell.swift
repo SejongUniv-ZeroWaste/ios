@@ -19,6 +19,7 @@ class WashCollectionViewCell: UICollectionViewCell {
     let myLabel = UILabel().then {
         $0.font = UIFont.systemFont(ofSize: 16, weight: .bold)
         $0.textColor = .black
+        $0.numberOfLines = 0
     }
     
     let desLabel = UILabel().then {
