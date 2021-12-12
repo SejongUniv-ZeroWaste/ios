@@ -29,6 +29,8 @@ class HowToWashViewController: BaseViewController {
         $0.pageIndicatorTintColor = .darkGray
         $0.backgroundColor = .none
     }
+    
+    let whenArr : [String] = ["#냄새 날 때","#녹이 슬었을 때","이물질이 있을 때","물때와 찌든때가 있을 때",""]
 
 
     override func viewDidLoad() {
@@ -74,8 +76,11 @@ extension HowToWashViewController : UICollectionViewDelegate, UICollectionViewDa
         guard let detailCell = collectionView.dequeueReusableCell(withReuseIdentifier: WashCollectionViewCell.registerID, for: indexPath) as? WashCollectionViewCell else {
             return UICollectionViewCell()
         }
-        
-        detailCell.myLabel.text = "텀블러 세척법 \(indexPath.row + 1)"
+        if indexPath.row < 4 {
+            detailCell.myLabel.text = "텀블러 세척법 \(indexPath.row + 1)\n\n\(whenArr[indexPath.row])"
+        } else {
+            detailCell.myLabel.text = "텀블러 세척법 마무리\n\n\(whenArr[indexPath.row])"
+        }
         detailCell.imgView.image = UIImage(named: "tree\(indexPath.row + 1)")
         
         detailCell.desLabel.text = WashSeq().desText[indexPath.row]
