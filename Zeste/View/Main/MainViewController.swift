@@ -40,6 +40,12 @@ class MainViewController: BaseViewController {
         $0.tag = 0
     }
     
+    let newLabel = UILabel().then {
+        $0.text = "🎁"
+        $0.font = UIFont.boldSystemFont(ofSize: 15)
+        $0.isHidden = true
+    }
+    
     let sizeBtn = UIButton().then {
         $0.setImage(UIImage(named: "oz"), for: .normal)
         $0.tag = 1
@@ -69,6 +75,7 @@ class MainViewController: BaseViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        if !Constant.isFull {
         ref.child("users").observeSingleEvent(of: .value, with: { (snapshot) in
             for child in snapshot.children {
                 let snap = child as! DataSnapshot
@@ -85,6 +92,14 @@ class MainViewController: BaseViewController {
             print(error.localizedDescription)
         }
         
+        } else {
+            newLabel.isHidden = false
+            self.myStampCnt = 0
+            for i in 1...5 {
+                innerStampView1.circleArr[i].image =  UIImage(named: "stampOff")
+                innerStampView2.circleArr[i].image =  UIImage(named: "stampOff")
+            }
+        }
     }
     
 }
@@ -110,7 +125,7 @@ extension MainViewController {
     }
     
     private func initVC() {
-        _ = [mainCircleView,stampWholeView,btnView].map {self.view.addSubview($0)}
+        _ = [mainCircleView,stampWholeView,btnView,newLabel].map {self.view.addSubview($0)}
         _ = [logoIV,notiLabel].map {self.mainCircleView.addSubview($0)}
         _ = [couponBtn,sizeBtn].map {self.btnView.addSubview($0)}
         _ = [stampStack].map {self.stampWholeView.addSubview($0)}
@@ -165,6 +180,10 @@ extension MainViewController {
             $0.centerY.equalToSuperview()
             $0.centerX.equalToSuperview().offset(self.view.frame.width/4)
         }
+        newLabel.snp.makeConstraints {
+            $0.bottom.equalTo(couponBtn.snp.top).offset(20)
+            $0.leading.equalTo(couponBtn.snp.trailing).offset(-8)
+        }
     }
     
 }
@@ -172,7 +191,10 @@ extension MainViewController {
 extension MainViewController {
     @objc func qrTapped() {
         print("qrTapped")
-        self.navigationController?.pushViewController(QRCodeViewController(), animated: false)
+        let nextVC = QRCodeViewController()
+        //self.navigationController?.pushViewController(QRCodeViewController(), animated: false)
+        nextVC.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(nextVC, animated: false)
     }
     @objc func personTapped(){
         print("infoTapped")

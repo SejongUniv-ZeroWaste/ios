@@ -7,11 +7,13 @@
 
 import UIKit
 import FirebaseDatabase
+import FirebaseAuth
 
 class MyCouponViewController: BaseViewController {
 
     var ref : DatabaseReference!
     var myStampCnt : Int = 0
+    var userNick : String = ""
     
     var noticLabel = UILabel().then {
         $0.text = "아직 쿠폰이 없어요 😰"
@@ -22,6 +24,7 @@ class MyCouponViewController: BaseViewController {
     
     let couponIV = UIImageView().then {
         $0.image = UIImage(named: "myCoupon")
+        $0.isHidden = true
     }
     
     override func viewDidLoad() {
@@ -33,7 +36,7 @@ class MyCouponViewController: BaseViewController {
         bindConstraints()
         
         getMyStamp("miori")
-        couponIV.isHidden = true
+        //couponIV.isHidden = true
         
     }
     
@@ -63,6 +66,7 @@ extension MyCouponViewController {
 
 extension MyCouponViewController {
     func getMyStamp(_ nick : String) {
+        self.userNick = nick
         ref.child("users").observeSingleEvent(of: .value, with: { (snapshot) in
             for child in snapshot.children {
                 let snap = child as! DataSnapshot
@@ -79,11 +83,38 @@ extension MyCouponViewController {
         }
         
     }
+    
+    func resetStamp(_ nick : String) {
+        let userID = Auth.auth().currentUser?.uid ?? ""
+        self.ref.child("users").observeSingleEvent(of: .value, with: { (snapshot) in
+            for child in snapshot.children {
+                let snap = child as! DataSnapshot
+                //print(snap)
+                let value = snap.value as? NSDictionary
+                if value?["nick"] as! String == nick {
+                    var tmpStamp = value?["points"] as? Int ?? 0
+                    tmpStamp = 0
+                    self.ref.child("users").child(userID).updateChildValues(["points":tmpStamp])
+                }
+                //print(self.myStampCnt)
+                //self.navigationController?.popViewController(animated: false)
+            }
+        }) { (error) in
+            print(error.localizedDescription)
+        }
+    }
     func checkMyStamp(_ stampCnt : Int) {
         if stampCnt != 10 {
             noticLabel.isHidden = false
             couponIV.isHidden = true
         } else {
+            Constant.isFull = true
+            self.presentAlert(title: "쿠폰이 발급 되었어요 👏") {
+                [self] action in
+                self.myStampCnt = 0
+                resetStamp(userNick)
+                
+            }
             noticLabel.isHidden = true
             couponIV.isHidden = false
         }
