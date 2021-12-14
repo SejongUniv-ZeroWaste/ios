@@ -9,4 +9,5 @@ import Foundation
 
 struct Constant {
     static let Git = "https://raw.githubusercontent.com/SejongUniv-ZeroWaste/server/main"
+    static var isFull : Bool = false
 }
