@@ -10,11 +10,13 @@ import UIKit
 class NewsViewController: BaseViewController {
     
     var newsArr : [String] = []
+    var imgArr : [String] = ["quiz_0","quiz_1","quiz_2","quiz_3","quiz_4","quiz_5"]
     let tv = UITableView().then {
         $0.backgroundColor = .white
         $0.register(NewsTableViewCell.self, forCellReuseIdentifier: NewsTableViewCell.registerID)
     }
     
+    var newsList : [NewsData] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -26,6 +28,8 @@ class NewsViewController: BaseViewController {
         initVC()
         bindConstraints()
         setBarButton()
+        
+        NewsDataManager().getNewsList(viewController: self)
     }
 }
 
@@ -57,14 +61,14 @@ extension NewsViewController {
         self.tv.tableFooterView = UIView()
         // autoHeight
         self.tv.rowHeight = UITableView.automaticDimension
-        self.tv.estimatedRowHeight = 40
+        self.tv.estimatedRowHeight = 35
     }
 }
 
 extension NewsViewController : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return newsList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -72,13 +76,18 @@ extension NewsViewController : UITableViewDelegate, UITableViewDataSource {
         guard let myCell = tableView.dequeueReusableCell(withIdentifier: NewsTableViewCell.registerID, for: indexPath) as? NewsTableViewCell else {
             return UITableViewCell()
         }
-        myCell.newsLabel.text = "newsLabel\(indexPath.row)"
-        myCell.tagLabel.text = "#태그1 #태그2 #태그3 #태그4 #태그5 #태그5 #태그7"
+        myCell.newsLabel.text = "\"\(newsList[indexPath.row].nTitle)\""
+        myCell.tagLabel.text = "\(newsList[indexPath.row].tag)"
+        myCell.newsImg.image = UIImage(named: "\(imgArr[indexPath.row])")
         cell = myCell
         return cell
     }
     
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let url = URL(string: "\(newsList[indexPath.row].link)") {
+            UIApplication.shared.open(url, options: [:])
+        }
+    }
 }
 
 
@@ -87,5 +96,16 @@ extension NewsViewController {
         let nextVC = QuizViewController()
         nextVC.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(nextVC, animated: false)
+    }
+}
+
+extension NewsViewController {
+    func didSuccess(result : NewsDataModel) {
+        print(result.results)
+        newsList = result.results
+        tv.reloadData()
+    }
+    func failedToRequest(message : String) {
+        self.presentAlert(title: message)
     }
 }
