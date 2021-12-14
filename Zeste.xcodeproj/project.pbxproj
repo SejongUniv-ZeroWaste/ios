@@ -10,6 +10,8 @@
 		3D1356FF274A943C0040D16B /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1356FE274A943C0040D16B /* UIViewController.swift */; };
 		3D312D9927659E5100AA295B /* AnotherSizeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D312D9827659E5100AA295B /* AnotherSizeCollectionViewCell.swift */; };
 		3D312D9C2765A67E00AA295B /* MyMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D312D9B2765A67E00AA295B /* MyMapViewController.swift */; };
+		3D312DA027665C9F00AA295B /* NewsDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D312D9F27665C9F00AA295B /* NewsDataModel.swift */; };
+		3D312DA327665CE700AA295B /* NewsDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D312DA227665CE700AA295B /* NewsDataManager.swift */; };
 		3D4720B5270979AC005E9D8D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4720B4270979AC005E9D8D /* AppDelegate.swift */; };
 		3D4720B7270979AC005E9D8D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4720B6270979AC005E9D8D /* SceneDelegate.swift */; };
 		3D4720B9270979AC005E9D8D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4720B8270979AC005E9D8D /* ViewController.swift */; };
@@ -84,6 +86,8 @@
 		3D1356FE274A943C0040D16B /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		3D312D9827659E5100AA295B /* AnotherSizeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnotherSizeCollectionViewCell.swift; sourceTree = "<group>"; };
 		3D312D9B2765A67E00AA295B /* MyMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMapViewController.swift; sourceTree = "<group>"; };
+		3D312D9F27665C9F00AA295B /* NewsDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDataModel.swift; sourceTree = "<group>"; };
+		3D312DA227665CE700AA295B /* NewsDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDataManager.swift; sourceTree = "<group>"; };
 		3D4720B1270979AC005E9D8D /* Zeste.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zeste.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D4720B4270979AC005E9D8D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3D4720B6270979AC005E9D8D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -113,7 +117,6 @@
 		3DB5670627267DCD0039EAA0 /* HowToWashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToWashViewController.swift; sourceTree = "<group>"; };
 		3DB5670927267E8D0039EAA0 /* WashCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WashCollectionViewCell.swift; sourceTree = "<group>"; };
 		3DD7D1122739AF73006BA7FF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		3DE55EA1273AB35000747E27 /* Zeste.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Zeste.entitlements; sourceTree = "<group>"; };
 		3DE55EA3273AB9D000747E27 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		3DE55EA5273D104D00747E27 /* WashModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WashModel.swift; sourceTree = "<group>"; };
 		3DE55EA7273D162B00747E27 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
@@ -174,6 +177,22 @@
 			path = MapView;
 			sourceTree = "<group>";
 		};
+		3D312D9D27665C8900AA295B /* News */ = {
+			isa = PBXGroup;
+			children = (
+				3D312D9F27665C9F00AA295B /* NewsDataModel.swift */,
+			);
+			path = News;
+			sourceTree = "<group>";
+		};
+		3D312DA127665CD700AA295B /* News */ = {
+			isa = PBXGroup;
+			children = (
+				3D312DA227665CE700AA295B /* NewsDataManager.swift */,
+			);
+			path = News;
+			sourceTree = "<group>";
+		};
 		3D4720A8270979AC005E9D8D = {
 			isa = PBXGroup;
 			children = (
@@ -200,7 +219,6 @@
 			isa = PBXGroup;
 			children = (
 				3DED0BF127595BB30063D57C /* Network */,
-				3DE55EA1273AB35000747E27 /* Zeste.entitlements */,
 				3D4720E82709DEDD005E9D8D /* Configuration */,
 				3D4720E42709DE26005E9D8D /* View */,
 				3D4720F32709EE54005E9D8D /* Model */,
@@ -308,6 +326,7 @@
 		3D4720F32709EE54005E9D8D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				3D312D9D27665C8900AA295B /* News */,
 				3DED0BFF2759B9B40063D57C /* CoffeeSize */,
 				3DED0BF327595BBF0063D57C /* Quiz */,
 				3DED0BE22757B3330063D57C /* Text */,
@@ -387,6 +406,7 @@
 		3DED0BF127595BB30063D57C /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				3D312DA127665CD700AA295B /* News */,
 				3DED0C022759BA1A0063D57C /* CoffeeSize */,
 				3DED0BF227595BB90063D57C /* Quiz */,
 			);
@@ -731,6 +751,7 @@
 				3D4720FC270A0A82005E9D8D /* BaseViewController.swift in Sources */,
 				3D62D80E27558B0B001CB6CF /* GetUserInfoViewController.swift in Sources */,
 				3D4720F22709E4F6005E9D8D /* CircleView.swift in Sources */,
+				3D312DA327665CE700AA295B /* NewsDataManager.swift in Sources */,
 				3D62D8082750160E001CB6CF /* QRCodeViewController.swift in Sources */,
 				3DE55EA8273D162B00747E27 /* NewsViewController.swift in Sources */,
 				3DED0BEC27593A750063D57C /* QuizAnsView.swift in Sources */,
@@ -740,6 +761,7 @@
 				3DED0BF027593B8C0063D57C /* QuizPopUpView.swift in Sources */,
 				3D4720FA270A0A69005E9D8D /* MyInfoViewController.swift in Sources */,
 				3DE55EA6273D104D00747E27 /* WashModel.swift in Sources */,
+				3D312DA027665C9F00AA295B /* NewsDataModel.swift in Sources */,
 				3D312D9927659E5100AA295B /* AnotherSizeCollectionViewCell.swift in Sources */,
 				3DED0C042759BA2A0063D57C /* CoffeeSizeDataManager.swift in Sources */,
 				3D4720EF2709E086005E9D8D /* Color.swift in Sources */,
