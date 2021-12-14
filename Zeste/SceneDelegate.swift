@@ -22,7 +22,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         // Window 설정
         self.window = UIWindow(windowScene: scene)
-        window?.rootViewController = BaseTabBarController()
+        //window?.rootViewController = BaseTabBarController()
+        let loglog = UserDefaults.standard.object(forKey: "maintain")
+        if loglog == nil {
+            window?.rootViewController = UINavigationController(rootViewController: LoginViewController())
+        } else {
+            window?.rootViewController = BaseTabBarController()
+        }
         window?.makeKeyAndVisible()
     }
 
