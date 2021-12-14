@@ -10,7 +10,7 @@ import AVFoundation
 import FirebaseAuth
 import FirebaseDatabase
 
-class QRCodeViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
+class QRCodeViewController: BaseViewController, AVCaptureMetadataOutputObjectsDelegate {
     
     let session = AVCaptureSession()
     var previewLayer = AVCaptureVideoPreviewLayer()
@@ -20,7 +20,10 @@ class QRCodeViewController: UIViewController, AVCaptureMetadataOutputObjectsDele
     // real db
     var ref : DatabaseReference!
     
+    var qrArea:CGRect!
+    
     let qrIV = UIImageView()
+    var output = AVCaptureMetadataOutput()
     override func viewDidLoad() {
         initV()
         bindConstraints()
@@ -36,21 +39,36 @@ class QRCodeViewController: UIViewController, AVCaptureMetadataOutputObjectsDele
             print("Error capturing QRCode")
         }
         
-        let output = AVCaptureMetadataOutput()
+        
         session.addOutput(output)
         
         output.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
         output.metadataObjectTypes = [AVMetadataObject.ObjectType.qr]
         
         previewLayer = AVCaptureVideoPreviewLayer(session: session)
-        previewLayer.frame = view.layer.bounds
-        view.layer.addSublayer(previewLayer)
+//        previewLayer.frame = view.layer.bounds
+//        view.layer.addSublayer(previewLayer)
         
-        qrIV.layer.borderWidth = 2
+  
+
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        
+        view.layer.addSublayer(previewLayer)
+        previewLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
+        previewLayer.frame = view.layer.bounds
+        
+        qrIV.layer.borderWidth = 5
         qrIV.layer.borderColor = UIColor.zestGreen.cgColor
         self.view.bringSubviewToFront(qrIV)
-        
+        let xP : CGFloat = (self.view.frame.width - 220)/2
+        let yP : CGFloat = (self.view.frame.height - 220)/2
+        qrArea = CGRect(x: xP , y: yP, width: 220, height: 220)
         session.startRunning()
+        output.rectOfInterest = previewLayer.metadataOutputRectConverted(fromLayerRect: qrArea)
     }
 }
 
@@ -72,6 +90,10 @@ extension QRCodeViewController {
             if readableObject.stringValue == "http://m.site.naver.com/0Ta6T" {
                 self.session.stopRunning()
                 if !session.isRunning {
+                    showIndicator()
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                        self.dismissIndicator()
+                    
                     self.presentAlert(title: "적립완료") { [self] action in
                         let userID = Auth.auth().currentUser?.uid ?? ""
                         self.ref.child("users").observeSingleEvent(of: .value, with: { (snapshot) in
@@ -91,10 +113,22 @@ extension QRCodeViewController {
                             print(error.localizedDescription)
                         }
                     }
+                }
                     
                 }
             } else {
-                self.presentAlert(title: "올바른 qr 코드를 찍어주세요")
+                self.session.stopRunning()
+                if !session.isRunning {
+                    showIndicator()
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                        self.dismissIndicator()
+                        self.presentAlert(title: "올바른 qr 코드를 찍어주세요") {
+                            [self] action in
+                            session.startRunning()
+                        }
+                    }
+                }
+
             }
             
             //               let alert = UIAlertController(title: "QRCode 리딩 성공", message: readableObject.stringValue, preferredStyle: .actionSheet)
