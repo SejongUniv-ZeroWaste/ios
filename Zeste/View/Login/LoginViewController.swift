@@ -183,7 +183,8 @@ extension LoginViewController {
         let in_email = emailTF.text ?? ""
         let in_pw = pwTF.text ?? ""
         
-        self.loginUser(withEmail: in_email, password: in_pw)
+        //self.loginUser(withEmail: in_email, password: in_pw)
+        self.changeRootViewController(BaseTabBarController())
     }
     
     private func loginUser(withEmail email : String, password : String) {
@@ -221,6 +222,7 @@ extension LoginViewController {
     }
     
     @objc func maintainLogin(_ sender : UIButton) {
+        UserDefaults.standard.set("ok", forKey: "maintain")
         sender.setImage(UIImage(systemName: "checkmark.circle.fill"), for: .normal)
         sender.tintColor = .zestGreen
     }
