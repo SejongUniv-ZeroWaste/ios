@@ -17,7 +17,7 @@ class NewsTableViewCell: UITableViewCell {
     
     let newsLabel = UILabel().then {
         $0.numberOfLines = 0
-        $0.font = UIFont.boldSystemFont(ofSize: 18)
+        $0.font = UIFont.boldSystemFont(ofSize: 16)
         $0.textColor = .black
     }
     let tagLabel = UILabel().then {
@@ -54,10 +54,10 @@ class NewsTableViewCell: UITableViewCell {
         newsImg.snp.makeConstraints {
             $0.leading.equalToSuperview().offset(8)
             $0.centerY.equalToSuperview()
-            $0.top.equalToSuperview().offset(8)
-            $0.bottom.equalToSuperview().offset(-8)
-            $0.width.equalToSuperview().multipliedBy(0.35)
-            //$0.height.equalToSuperview().multipliedBy(0.8)
+            $0.top.equalToSuperview().offset(10)
+            $0.bottom.equalToSuperview().offset(-10)
+            $0.width.equalToSuperview().multipliedBy(0.3)
+            $0.height.equalTo(newsImg.snp.width).multipliedBy(0.9)
         }
         newsLabel.snp.makeConstraints {
             $0.top.equalTo(newsImg).offset(5)
