@@ -167,11 +167,13 @@ extension GetUserInfoViewController {
         } else if self.cnt == 1 {
             //finishNick()
             let in_nick = inTF.text!
+            print(in_nick)
             checkNick(in_nick)
         } else if self.cnt == 2 {
             finishPhone()
         } else if self.cnt == 3 {
-            self.changeRootViewController(BaseTabBarController())
+            //self.changeRootViewController(BaseTabBarController())
+            self.changeRootViewController(UINavigationController(rootViewController: LoginViewController()))
             cnt = 0
         }
     }
@@ -193,6 +195,7 @@ extension GetUserInfoViewController {
         pageControl.currentPage = 3
         topicLabel.text = "🎉 환영합니다"
         desLabel.text = "\(userNick)님,\n\(LabelText().welcomeT)"
+        nextBtn.setTitle("로그인 하러가기", for: .normal)
         inTF.isHidden = true
         cnt += 1
     }
@@ -207,6 +210,7 @@ extension GetUserInfoViewController {
                 self.finishNick()
             } else {
                 self.presentAlert(title: "⚠️ 닉네임 중복", message: "이미 있는 닉네임 이예요.")
+                self.inTF.text = ""
             }
         }
 
