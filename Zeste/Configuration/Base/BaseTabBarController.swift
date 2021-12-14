@@ -22,7 +22,8 @@ class BaseTabBarController: UITabBarController, UITabBarControllerDelegate {
         super.viewDidLoad()
         
         let homNavigationController = UINavigationController(rootViewController: mainViewController)
-        let locNavigationController = mainViewController2 //UINavigationController(rootViewController: mainViewController2)
+        let locNavigationController = mainViewController2
+        //UINavigationController(rootViewController: mainViewController2)
         let newsNavigationController = UINavigationController(rootViewController: newsVC)
         let howtoNavigationController = howToWashVC
         //UINavigationController(rootViewController: howToWashVC)
